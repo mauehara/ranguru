@@ -1,10 +1,15 @@
 source 'https://rubygems.org'
+ruby '1.9.3', :engine => 'jruby', :engine_version => '1.7.4'
+#ruby=jruby-1.7.4
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
-# Use mysql as the database for Active Record
-gem 'mysql2'
+group :development do
+  gem 'activerecord-jdbc-adapter'
+  gem 'jdbc-mysql'
+  gem 'activerecord-jdbcmysql-adapter'
+end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -43,3 +48,6 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'puma'
+gem 'pry'
