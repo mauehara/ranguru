@@ -9,8 +9,10 @@ class WelcomeController < ApplicationController
 
   def recommender
     recommender = JrubyMahout::Recommender.new("PearsonCorrelationSimilarity", 10, "GenericUserBasedRecommender", false)
-    recommender.data_model = JrubyMahout::DataModel.new("mysql", { }).data_model
+    #recommender.data_model = JrubyMahout::DataModel.new("mysql", { }).data_model
+    recommender.data_model = JrubyMahout::DataModel.new("file", {:file_path => "_ratings.csv"}).data_model
     @recommendations = recommender.recommend(1, 1, nil)
     @evaluation = recommender.evaluate(0.7, 0.3)
+    @user = User.first
   end
 end
