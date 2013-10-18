@@ -12,4 +12,6 @@ Ranguru::Application.routes.draw do
     end
     get "/application.manifest" => offline  
   end
+
+  resources :users
 end
