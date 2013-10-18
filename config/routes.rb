@@ -14,4 +14,6 @@ Ranguru::Application.routes.draw do
   end
 
   resources :users
+  match '/signup',  to: 'users#new',        via: 'get'
+  
 end
