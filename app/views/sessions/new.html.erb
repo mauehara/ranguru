@@ -1,17 +1,25 @@
 <% provide(:title, "Sign In") %>
 
-<h1>Sign In</h1>
+<div class="row">
+	<div class="sign-in small-9 small-centered columns">
+		<h1 class="centered subheader">Ranguru</h1>
 
-<%= form_for(:session, url: sessions_path) do |f| %>
+		<% flash.each do |key, value| %>
+  		<div class="centered notification <%= key %>"><%= value %></div>
+		<% end %>
 
-  <%= f.label :email %>
-  <%= f.text_field :email %>
+		<%= form_for(:session, url: sessions_path) do |f| %>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+		  <!-- <%= f.label :email %> -->
+		  <%= f.text_field :email, placeholder: "Email" %>
 
-  <%= f.submit "Sign in" %>
+		  <!-- <%= f.label :password %> -->
+		  <%= f.password_field :password, placeholder: "Password" %>
 
-<% end %>
+		  <%= f.submit "Sign in", class: "button expand" %>
 
-<p>New user? <%= link_to "Sign up now!", signup_path %></p>
+		<% end %>
+
+		<p class="centered sign_up_label">Don't have an account? <%= link_to "Sign up now!", signup_path, class: "bold" %></p>
+	</div>
+</div>
