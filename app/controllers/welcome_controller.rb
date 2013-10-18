@@ -4,6 +4,8 @@ class WelcomeController < ApplicationController
   require 'lib/jruby_mahout/data_model'
   require 'lib/jruby_mahout/evaluator'
 
+  before_action :signed_in_user
+
   def index
   end
 
