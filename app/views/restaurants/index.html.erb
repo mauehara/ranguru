@@ -1,17 +1,17 @@
-Restaurants
-
 <%= form_tag restaurants_path, :method => 'get', :id => "restaurant_search" do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
-  </p>
+  	<i class="fi-magnifying-glass"></i>
+    <%= text_field_tag :search, params[:search], placeholder: "Buscar Restaurantes" %>
 <% end %>
 
-<ul>
+<ul id="restaurant_list">
 <% for restaurant in @restaurants %>
 	<li>
-		<%= restaurant.name %>
-		<%= restaurant.address %>
+			<img class="radius" src="<%= restaurant.image_url %>">
+			<div class="info">
+				<span class="restaurant-name"><%= restaurant.name %></span><br/>
+				<span class="restaurant-address"><%= restaurant.address %></span>
+			</div>
+			<div style="clear:both;"></div>
 	</li>
 <% end %>
 </ul>

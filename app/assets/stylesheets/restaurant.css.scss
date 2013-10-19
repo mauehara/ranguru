@@ -1,3 +1,45 @@
 // Place all the styles related to the restaurant controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "variables";
+
+#restaurant_search {
+	background-color: $primary-color;
+	margin-bottom: 0;
+	padding: 15px 15px;
+}
+#restaurant_search input[type=text] {
+	background-color: $secondary-color;
+	border: none;
+	box-shadow: none;
+	margin-bottom: 0;
+	padding-left: 25px;
+}
+#restaurant_search i {
+	color: #AAA;
+	font-size: 18px;
+	line-height: 33px;
+	margin-left: 5px;
+	margin-right: 5px;
+	position: absolute;
+}
+#restaurant_list li {
+	border-bottom: 1px solid #DDD;
+	display: block;
+	padding: 15px 15px;
+}
+#restaurant_list li img {
+	float: left;
+	width: 50px;
+	height: 50px;
+}
+#restaurant_list li .info {
+	float: left;
+	font-size: 11px;
+	margin-bottom: 0;
+	padding: 5px;
+}
+#restaurant_list li .info .restaurant-address {
+	font-size: 9px;
+	color: #777;
+}
