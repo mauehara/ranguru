@@ -1,0 +1,18 @@
+$alert-color: #c60f13;
+$alert-color-bg: rgba(198, 15, 19, 0.1);
+
+.notification {
+	font-weight: bold;
+}
+.notification.alert{
+		color: $alert-color;
+}
+.field_with_errors input {
+	background-color: $alert-color-bg;
+	border-color: $alert-color;
+}
+input {
+	-webkit-appearance: none;
+	-webkit-border-radius: none;
+	border-radius: none;
+}
