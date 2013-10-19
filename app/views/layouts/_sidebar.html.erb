@@ -1,10 +1,13 @@
 <section id="sidebar" role="complementary">
   <nav id="sideMenu" role="navigation">
     <ul id="sideMainNav" class="nav-bar">
-      <li><a href="">One</a></li>
-      <li><a href="">Two</a></li>
-      <li><a href="">Three</a></li>
-      <li><a href="">Four</a></li>
+      <li><i class="fi-torso"></i><%= link_to current_user.name, current_user %></li>
+      <li class="divider"></li>
+      <li><i class="fi-star"></i><a href="">Avaliar Restaurantes</a></li>
+      <li class="divider"></li>
+      <li><i class="fi-widget"></i><a href="">Configurações</a></li>
+      <li class="divider"></li>
+      <li><i class="fi-power"></i><%= link_to "Sair", signout_path, method: "delete" %></li>
     </ul>
   </nav>
 </section>
