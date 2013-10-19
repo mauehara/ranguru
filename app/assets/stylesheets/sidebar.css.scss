@@ -1,6 +1,8 @@
+@import "variables";
+
 #sidebar {
 	background: #333;
-	height: 100%;
+	height: $temp-app-height;
 	padding: 0;
 	-webkit-box-shadow: inset -2px 0 8px -1px #111111;
 	box-shadow: inset -2px 0 8px -1px #111111;

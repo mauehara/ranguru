@@ -1,12 +1,19 @@
-@import "foundation/foundation-global";
+@import "variables";
 
 #header {
 	background-color: $primary-color;
 	padding: 15px;
 	width: 100%;
 }
-
-.menu-icon {
-	color: white;
+#header h1 {
+	color: $secondary-color;
 	font-size: 25px;
+	margin: 0;
+	line-height: 18px;
+}
+.menu-icon {
+	color: $secondary-color;
+	float: left;
+	font-size: 25px;
+	margin-top: -3px;
 }
