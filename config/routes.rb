@@ -16,10 +16,10 @@ Ranguru::Application.routes.draw do
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :restaurants
 
   match '/signup',  to: 'users#new',        via: 'get'
   match '/signin',  to: 'sessions#new',     via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'
-  match '/rate'   , to: 'restaurant#rate',  via: 'get'
 
 end

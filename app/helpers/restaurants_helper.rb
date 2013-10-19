@@ -1,4 +1,4 @@
-module RestaurantHelper
+module RestaurantsHelper
 	require 'lib/jruby_mahout/recommender'
   require 'lib/jruby_mahout/recommender_builder'
   require 'lib/jruby_mahout/data_model'
@@ -18,7 +18,7 @@ module RestaurantHelper
 	end
 
 	def has_enough_recommendations
-		redirect_to rate_url, notice: "Por favor, avalie alguns restaurants" unless current_user_recommendations.length > 0
+		redirect_to restaurants_path, notice: "Por favor, avalie alguns restaurants" unless current_user_recommendations.length > 0
 	end
 
   private
