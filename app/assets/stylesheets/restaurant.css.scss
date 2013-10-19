@@ -24,6 +24,7 @@
 	position: absolute;
 }
 #restaurant_list li {
+	border-top: 1px solid #F8F8F8;
 	border-bottom: 1px solid #DDD;
 	display: block;
 	padding: 15px 15px;
@@ -39,7 +40,30 @@
 	margin-bottom: 0;
 	padding: 5px;
 }
+#restaurant_list li .info .restaurant-name {
+	font-weight: bold;
+}
 #restaurant_list li .info .restaurant-address {
 	font-size: 9px;
 	color: #777;
+}
+
+.rating-modal .fi-star {
+	color: #BBB;
+	font-size: 30px;
+}
+.rating-modal .fi-star.active {
+	color: $primary-color;
+	font-size: 30px;
+}
+
+#restaurant_rating input[type=submit] {
+	margin-top: 15px;
+}
+#rating-help {
+	color: $primary-color;
+	font-size: 11px;
+	font-weight: bold;
+	vertical-align: text-top;
+	margin-left: 10px;
 }
