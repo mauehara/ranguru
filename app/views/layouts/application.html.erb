@@ -29,14 +29,14 @@
 
     <%= javascript_include_tag "application" %>
 
-    <div id="mymodal" class="reveal-modal rating-modal">
+    <div id="mymodal" class="centered reveal-modal rating-modal">
       <h2></h2>
       <p>Avalie esse restaurante!</p>
       <i class="1-star fi-star"></i>
       <i class="2-star fi-star"></i>
       <i class="3-star fi-star"></i>
       <i class="4-star fi-star"></i>
-      <i class="5-star fi-star"></i>
+      <i class="5-star fi-star"></i><br/><br/>
       <span id="rating-help"></span>
       <%= form_tag 'restaurants/rate', :method => 'post', :id => "restaurant_rating" do %>
         <%= hidden_field_tag 'restaurant_id' %>
