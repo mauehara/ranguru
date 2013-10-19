@@ -1,6 +1,7 @@
 Ranguru::Application.routes.draw do
   get 'welcome/index'
   get 'welcome/recommender'
+
   root 'welcome#index'
 
   if Rails.env.production?
@@ -19,5 +20,6 @@ Ranguru::Application.routes.draw do
   match '/signup',  to: 'users#new',        via: 'get'
   match '/signin',  to: 'sessions#new',     via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'
+  match '/rate'   , to: 'restaurant#rate',  via: 'get'
 
 end

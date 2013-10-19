@@ -3,7 +3,7 @@
     <ul id="sideMainNav" class="nav-bar">
       <li><i class="fi-torso"></i><%= link_to current_user.name, current_user %></li>
       <li class="divider"></li>
-      <li><i class="fi-star"></i><a href="">Avaliar Restaurantes</a></li>
+      <li><i class="fi-star"></i><a href=""><%= link_to "Avaliar Restaurantes", :controller => "restaurant", :action => "rate" %></a></li>
       <li class="divider"></li>
       <li><i class="fi-widget"></i><a href="">Configurações</a></li>
       <li class="divider"></li>

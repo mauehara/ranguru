@@ -12,6 +12,7 @@ module SessionsHelper
 	def sign_out
 		self.current_user = nil
 		session[:current_user_id] = nil
+		session[:current_user_recommendations] = nil
 	end
 
 	def current_user=(user)
