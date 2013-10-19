@@ -21,35 +21,9 @@
   </head>
 
   <body id="page" class="off-canvas hide-extras">
-    <section id="sidebar" role="complementary">
-      <nav id="sideMenu" role="navigation">
-        <ul id="sideMainNav" class="nav-bar">
-          <li><a href="">One</a></li>
-          <li><a href="">Two</a></li>
-          <li><a href="">Three</a></li>
-          <li><a href="">Four</a></li>
-        </ul>
-      </nav>
-    </section>
+    <%= render "layouts/sidebar" %>
     <section role="main">
-      <header id="header" class="row">
-      <div class="four columns phone-two">
-        <h1 id="site-title"><a href="http://zurb.com/playground/">ZURB</a></h1>
-      </div>
-      <div class="eight columns phone-two">
-        <nav id="menu" role="navigation" class="hide-for-small">
-          <ul id="mainNav" class="nav-bar">
-            <li><a href="">One</a></li>
-            <li><a href="">Two</a></li>
-            <li><a href="">Three</a></li>
-            <li><a href="">Four</a></li>
-          </ul>
-        </nav>
-        <p class="show-for-small">
-          <a class="sidebar-button button" id="sidebarButton" href="#sidebar">Menu</a>
-        </p>
-      </div>
-    </header>
+      <%= render "layouts/header" %>
       <%= yield %>
     </section>
 
