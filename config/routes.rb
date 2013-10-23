@@ -3,6 +3,7 @@ Ranguru::Application.routes.draw do
   post 'welcome/index'
   post 'welcome/recommender'
   get 'restaurants/modal'
+  get 'restaurants/index'
 
   root 'welcome#index'
 

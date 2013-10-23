@@ -4,14 +4,8 @@
 <% end %>
 
 <ul id="restaurant_list">
-<% for restaurant in @restaurants %>
-	<li data-restaurant-id="<%= restaurant.id %>" class="item">
-			<img class="radius" src="<%= restaurant.image_url %>">
-			<div class="info">
-				<span class="restaurant-name"><%= restaurant.name %></span><br/>
-				<span class="restaurant-address"><%= restaurant.address %></span>
-			</div>
-			<div style="clear:both;"></div>
+	<%= render 'restaurants/restaurants' %>
+	<li id="item-load-more">
+		<a>Mostrar mais restaurantes...</a>
 	</li>
-<% end %>
 </ul>
