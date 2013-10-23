@@ -1,8 +1,14 @@
-<p>Recommendations </p>
-<% @recommendations.each do |recommendation| %>
-<ul>
-	<li>Value of recommendation is  <%= recommendation %></li>
-</ul>
-<p>Evaluation</p>
-<%= @evaluation %>
-<% end %>
+<p> Surpreeesaaa </p>
+<p>Recomendação (Mahout):  <%= @recommendations[@index_recommendation]%></p>
+
+<p>Recomendação Número: <%=@index_recommendation+1%></p>
+
+<br/>
+<p>ID do Restaurante: <%=@restaurant.id%></p>
+<p>Nome do Restaurante: <%=@restaurant.name%></p>
+<p>Endereço do Restaurante: <%=@restaurant.address%></p>
+<p>Foto do Restaurante: </p>
+
+<%= button_to "Hoje não", action: "recommender" %>
+<%= button_to "Adicionar amigos"%>
+<%= button_to "Quero começar do zero", action: "index" %>

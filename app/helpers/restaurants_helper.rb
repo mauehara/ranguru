@@ -18,7 +18,7 @@ module RestaurantsHelper
 	end
 
 	def has_enough_recommendations
-		redirect_to restaurants_path, notice: "Por favor, avalie alguns restaurants" unless current_user_recommendations.length > 0
+		redirect_to restaurants_path, notice: "Por favor, avalie alguns restaurantes" unless current_user_recommendations.length > 0
 	end
 
   private
@@ -29,5 +29,21 @@ module RestaurantsHelper
     recommender.data_model = JrubyMahout::DataModel.new("file", {:file_path => "_ratings.csv"}).data_model
     @evaluation = recommender.evaluate(0.7, 0.3)
     recommender.recommend(user_id, 30, nil)
+  end
+
+  def get_index_recommendation
+    session[:index_recommendation]
+  end
+
+  def reset_index_recommendation
+    session[:index_recommendation] = -1
+  end
+
+  def increase_index_recommendation
+    if ((current_user_recommendations.length) -1) > session[:index_recommendation]
+      session[:index_recommendation] += 1
+    else
+      session[:index_recommendation] = 0
+    end
   end
 end
