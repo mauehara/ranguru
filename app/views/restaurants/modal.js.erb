@@ -1,4 +1,5 @@
 $("#mymodal h2").html("<%= @restaurant.name %>");
+$("#mymodal h6").html("<%= @restaurant.address %>");
 $("#restaurant_id").val("<%= @restaurant.id %>");
 $("#mymodal .1-star").click(function(){
 	$(this).siblings().removeClass("active");

@@ -5,7 +5,9 @@
 
 <ul id="restaurant_list">
 	<%= render 'restaurants/restaurants' %>
-	<li id="item-load-more">
-		<a>Mostrar mais restaurantes...</a>
-	</li>
+	<% if @restaurants.total_pages > 1 %>
+		<li id="item-load-more">
+			<a>Mostrar mais restaurantes...</a>
+		</li>
+	<% end %>
 </ul>
