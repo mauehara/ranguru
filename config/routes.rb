@@ -1,8 +1,8 @@
 Ranguru::Application.routes.draw do
   get 'welcome/index'
   post 'welcome/index'
-  post 'welcome/recommender'
   get 'restaurants/modal'
+  get 'users/modal'
 
   root 'welcome#index'
 
@@ -24,5 +24,10 @@ Ranguru::Application.routes.draw do
   match '/signin',  to: 'sessions#new',     via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'
   match '/restaurants/rate', to: 'restaurants#rate', via: 'post'
+  match '/welcome/recommender', to: 'welcome#recommender', via: 'post'
+  match '/welcome/finalize', to: 'welcome#finalize', via: 'post'
+  match '/welcome/add_friends', to: 'welcome#add_friends', via: 'post'
+  match '/users/add_friend', to: 'users#add_friend', via: 'post'
+  match '/users/return_to_origin', to: 'users#return_to_origin', via: 'post'
 
 end

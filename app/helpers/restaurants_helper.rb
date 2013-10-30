@@ -4,17 +4,29 @@ module RestaurantsHelper
   require 'lib/jruby_mahout/data_model'
   require 'lib/jruby_mahout/evaluator'
 
-  def get_recommendations(user_id = current_user.id)
+  def get_recommendations_with_friends(user_id, friends)
   	session[:current_user_recommendations] = get_recommendations(user_id)
-		self.current_user_recommendations = session[:current_user_recommendations]
+
+    friends.each do |friend|
+      recommendations_friend =  get_recommendations(friend.id)
+       session[:current_user_recommendations] = session[:current_user_recommendations] + recommendations_friend
+    end
+
+    self.current_user_recommendations = session[:current_user_recommendations]
   end
 
   def current_user_recommendations=(recommendations)
 		@current_user_recommendations = recommendations
 	end
 
+  def reset_current_user_recommendations
+    session[:current_user_recommendations] = nil
+    self.current_user_recommendations = nil
+  end
+
 	def current_user_recommendations
-		@current_user_recommendations || get_recommendations(current_user.id)
+    # @current_user_recommendations || get_recommendations(current_user.id)
+		get_recommendations_with_friends(current_user.id, friends)
 	end
 
 	def has_enough_recommendations
@@ -31,12 +43,17 @@ module RestaurantsHelper
     recommender.recommend(user_id, 30, nil)
   end
 
-  def get_index_recommendation
-    session[:index_recommendation]
+  def index_recommendation=(index)
+    @index_recommendation = index
+  end
+
+  def index_recommendation
+    @index_recommendation || session[:index_recommendation]
   end
 
   def reset_index_recommendation
     session[:index_recommendation] = -1
+    self.index_recommendation = session[:index_recommendation]
   end
 
   def increase_index_recommendation
@@ -45,5 +62,6 @@ module RestaurantsHelper
     else
       session[:index_recommendation] = 0
     end
+    self.index_recommendation = session[:index_recommendation]
   end
 end

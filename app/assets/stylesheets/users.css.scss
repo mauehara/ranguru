@@ -1,3 +1,58 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "variables";
+
+#user_search {
+	background-color: $primary-color;
+	margin-bottom: 0;
+	padding: 15px 15px;
+}
+#user_search input[type=text] {
+	background-color: $secondary-color;
+	border: none;
+	box-shadow: none;
+	margin-bottom: 0;
+	padding-left: 25px;
+}
+#user_search i {
+	color: #AAA;
+	font-size: 18px;
+	line-height: 33px;
+	margin-left: 5px;
+	margin-right: 5px;
+	position: absolute;
+}
+#user_list li {
+	border-top: 1px solid #F8F8F8;
+	border-bottom: 1px solid #DDD;
+	display: block;
+	padding: 15px 15px;
+}
+#user_list li img {
+	float: left;
+	width: 50px;
+	height: 50px;
+}
+#user_list li .info {
+	float: left;
+	font-size: 11px;
+	margin-bottom: 0;
+	padding: 5px;
+}
+#user_list li .info .user-name {
+	font-weight: bold;
+}
+#user_list li .info .user-email {
+	font-size: 9px;
+	color: #777;
+}
+
+.user_list .fi-plus {
+	color: #BBB;
+	font-size: 30px;
+}
+.user_list .fi-plus.active {
+	color: $primary-color;
+	font-size: 30px;
+}

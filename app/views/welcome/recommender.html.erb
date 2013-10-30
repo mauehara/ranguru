@@ -1,14 +1,23 @@
-<p> Surpreeesaaa </p>
-<p>Recomendação (Mahout):  <%= @recommendations[@index_recommendation]%></p>
-
-<p>Recomendação Número: <%=@index_recommendation+1%></p>
-
-<br/>
-<p>ID do Restaurante: <%=@restaurant.id%></p>
-<p>Nome do Restaurante: <%=@restaurant.name%></p>
-<p>Endereço do Restaurante: <%=@restaurant.address%></p>
-<p>Foto do Restaurante: </p>
-
-<%= button_to "Hoje não", action: "recommender" %>
-<%= button_to "Adicionar amigos"%>
+<p>Recomendação (Mahout):  <%= @recommendations[@index_recommendation]%> / Índice: <%=@index_recommendation%></p>
+<div id="restaurant_details" class="panel" >
+	<img class="radius" src="<%= @restaurant.image_url %>">
+	<div class="info">
+		<span class="restaurant-name"><%= @restaurant.name %></span><br/>
+		<span class="restaurant-address"><%= @restaurant.address %></span>
+	</div>
+	<div style="clear:both;"></div>
+</div>
+<%= button_to "Hoje não.. Próximo!", action: "recommender"%>
+<%= button_to "Gostei! Vou nele =)", action: "finalize" %>
+<%= button_to "Adicionar amigos", action: "add_friends"%>
 <%= button_to "Quero começar do zero", action: "index" %>
+
+<p><%=@recommendations%></p>
+<p><%=@friends%></p>
+<p><%=params[:action] %></p>
+
+<p><%=session[:index_recommendation]%></p>
+<p><%=@recommendations.length%></p>
+<p><%=(@recommendations[@index_recommendation])[0]%></p>
+<p><%=@index_recommendation_old%></p>
+<p><%=@index_recommendation%></p>

@@ -47,7 +47,18 @@
 	font-size: 9px;
 	color: #777;
 }
-
+#restaurant_details {
+	margin-left:5%; 
+	margin-right:5%; 
+	text-align:center;
+}
+#restaurant_details .info .restaurant-name {
+	font-weight: bold;
+}
+#restaurant_details .info .restaurant-address {
+	font-size: 9px;
+	color: #777;
+}
 .rating-modal .fi-star {
 	color: #BBB;
 	font-size: 30px;
