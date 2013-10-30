@@ -2,7 +2,10 @@ module SessionsHelper
 
 	def sign_in(user)
 		session[:current_user_id] = user.id
+		session[:friends] = []
+		session[:index_recommendation] = -1
 		self.current_user = user
+		self.friends = []
 	end
 
 	def signed_in?
@@ -13,6 +16,8 @@ module SessionsHelper
 		self.current_user = nil
 		session[:current_user_id] = nil
 		session[:current_user_recommendations] = nil
+		session[:friends] = nil
+		session[:index_recommendation] = nil
 	end
 
 	def current_user=(user)
@@ -28,16 +33,40 @@ module SessionsHelper
 	end
 
 	def signed_in_user
-    redirect_to signin_url, notice: "Please sign in." unless signed_in?
+	 	redirect_to signin_url, notice: "Please sign in." unless signed_in?
+	end
+
+	def not_signed_in_user
+		redirect_to root_url unless !signed_in?
+	end
+
+	def correct_user
+		@user = User.find(params[:id])
+		redirect_to root_url unless current_user?(@user)
+	end
+
+	def friends=(friends)
+		@friends = friends
+	end
+
+	def friends
+		@friends || session[:friends]
+	end
+
+  def add_remove_friend_session(user_id)
+    friend = User.find(user_id)
+    if friend_is_in_session(user_id)
+    	session[:friends].delete(friend)
+    else
+    	session[:friends] << friend
+    end
+    self.friends = session[:friends]
+    reset_index_recommendation
+    redirect_to users_url
   end
 
-  def not_signed_in_user
-    redirect_to root_url unless !signed_in?
+  def friend_is_in_session(user_id)
+  	friend = User.find(user_id)
+    session[:friends].include?(friend)
   end
-
-  def correct_user
-    @user = User.find(params[:id])
-    redirect_to root_url unless current_user?(@user)
-  end
-
 end
