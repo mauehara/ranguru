@@ -1,0 +1,23 @@
+<%= form_tag users_path, :method => 'get', :id => "user_search" do %>
+  	<i class="fi-magnifying-glass"></i>
+    <%= text_field_tag :search, params[:search], placeholder: "Buscar Usuários" %>
+<% end %>
+
+<ul id="user_list">
+<% for user in @users %>	
+	<li data-user-id="<%= user.id %>" class="item">
+		    <% if friend_is_in_session(user.id) %> 
+		    	<i class="fi-minus" style="float:left"></i>
+		    <% else %>
+		    	<i class="fi-plus" style="float:left"></i>
+		    <% end %>
+			<div class="info">
+				<span class="user-name"><%= user.name %></span><br/>
+				<span class="user-email"><%= user.email %></span>
+			</div>
+			<div style="clear:both;"></div>
+	</li>
+<% end %>
+</ul>
+
+<%= button_to "Voltar", action: "return_to_origin" %>

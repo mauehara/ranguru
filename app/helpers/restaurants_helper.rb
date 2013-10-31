@@ -7,9 +7,27 @@ module RestaurantsHelper
   def get_recommendations_with_friends(user_id, friends)
   	session[:current_user_recommendations] = get_recommendations(user_id)
 
+    # friends.each do |friend|
+    #   recommendations_friend =  get_recommendations(friend.id)
+    #   session[:current_user_recommendations] = session[:current_user_recommendations] + recommendations_friend
+    # end
+
     friends.each do |friend|
       recommendations_friend =  get_recommendations(friend.id)
-       session[:current_user_recommendations] = session[:current_user_recommendations] + recommendations_friend
+      recommendations_friend.each do |recommendation_friend|
+        recommendation_in_array = session[:current_user_recommendations].assoc(recommendation_friend[0])
+        if (recommendation_in_array == nil)
+          session[:current_user_recommendations] << recommendation_friend
+        else
+          average_rating = (recommendation_in_array[1] + recommendation_friend[1]) / 2.to_f
+          index_in_array = session[:current_user_recommendations].index(recommendation_in_array)
+          session[:current_user_recommendations][index_in_array][1] = average_rating
+        end
+      end
+    end
+
+    session[:current_user_recommendations].sort! do |a, b|
+      b[1] <=> a[1]
     end
 
     self.current_user_recommendations = session[:current_user_recommendations]
