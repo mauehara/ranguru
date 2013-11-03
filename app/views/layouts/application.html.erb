@@ -39,7 +39,7 @@
       <i class="4-star fi-star"></i>
       <i class="5-star fi-star"></i><br/><br/>
       <span id="rating-help"></span>
-      <%= form_tag 'restaurants/rate', :method => 'post', :id => "restaurant_rating" do %>
+      <%= form_tag 'rate', :method => 'post', :id => "restaurant_rating" do %>
         <%= hidden_field_tag 'restaurant_id' %>
         <%= hidden_field_tag 'restaurant_rating_value' %>
         <%= submit_tag 'Avaliar', class: "small button" %>

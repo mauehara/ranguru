@@ -1,5 +1,7 @@
 class RestaurantsController < ApplicationController
   
+  require 'CSV'
+
   def index
   	@restaurants = Restaurant.search(params[:search]).paginate(:page => params[:page], :per_page => 20)
   end
@@ -11,7 +13,13 @@ class RestaurantsController < ApplicationController
   def rate
   	@restaurant_id = params[:restaurant_id]
   	@restaurant_rating_value = params[:restaurant_rating_value]
-  	@rating = Rating.create(user_id: current_user.id, restaurant_id: @restaurant_id, rating: @restaurant_rating_value)
+  	#@rating = Rating.create(user_id: current_user.id, restaurant_id: @restaurant_id, rating: @restaurant_rating_value)
+    
+    # Solução temporária ao problema da lentidão do mysql
+    CSV.open("_ratings.csv", "ab") do |csv|
+      csv << [current_user.id, @restaurant_id, @restaurant_rating_value]
+    end
+
   end
 
 end
