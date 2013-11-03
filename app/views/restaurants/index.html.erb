@@ -1,3 +1,5 @@
+<%= render 'shared/signup_steps' %>
+
 <%= form_tag restaurants_path, :method => 'get', :id => "restaurant_search" do %>
   	<i class="fi-magnifying-glass"></i>
     <%= text_field_tag :search, params[:search], placeholder: "Buscar Restaurantes" %>
