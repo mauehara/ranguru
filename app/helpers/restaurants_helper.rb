@@ -52,10 +52,14 @@ module RestaurantsHelper
 		redirect_to restaurants_path, notice: "Por favor, avalie alguns restaurantes" unless current_user_recommendations.length > 0
 	end
 
+  def restaurants_rated
+    Rating.where(:user_id => session[:current_user_id]).size
+  end
+
   private
 
   def get_recommendations(user_id = 1)
-    recommender = JrubyMahout::Recommender.new("PearsonCorrelationSimilarity", 10, "GenericUserBasedRecommender", false)
+    recommender = JrubyMahout::Recommender.new("EuclideanDistanceSimilarity", 4, "GenericUserBasedRecommender", false)
     #recommender.data_model = JrubyMahout::DataModel.new("mysql", { }).data_model
     recommender.data_model = JrubyMahout::DataModel.new("file", {:file_path => "_ratings.csv"}).data_model
     @evaluation = recommender.evaluate(0.7, 0.3)
