@@ -1,4 +1,5 @@
 <% for restaurant in @restaurants %>
+	<% if !restaurant.ratings.where(user_id: session[:current_user_id]).first %>
 	<li data-restaurant-id="<%= restaurant.id %>" class="item">
 			<img class="radius" src="<%= restaurant.image_url %>">
 			<div class="info">
@@ -7,4 +8,5 @@
 			</div>
 			<div style="clear:both;"></div>
 	</li>
+	<% end %>
 <% end %>

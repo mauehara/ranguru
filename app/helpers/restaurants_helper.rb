@@ -3,6 +3,7 @@ module RestaurantsHelper
   require 'lib/jruby_mahout/recommender_builder'
   require 'lib/jruby_mahout/data_model'
   require 'lib/jruby_mahout/evaluator'
+  require 'CSV'
 
   def get_recommendations_with_friends(user_id, friends)
   	session[:current_user_recommendations] = get_recommendations(user_id)
