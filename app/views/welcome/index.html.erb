@@ -4,7 +4,13 @@
 	<%= render 'shared/signup_steps' %>
 <% end %>
 
-<%= button_to "Surprise me Guru", action: "recommender"%>
-<%= button_to "Adicionar amigos", action: "add_friends"%>
+<div class="panel centered">
+	<%= button_to "Surprise me\n Guru", { action: "recommender" }, { class: "magic-button" } %>
+</div>
+
+<div class="centered">
+	<%= button_to "Adicionar amigos", { action: "add_friends" }, { class: "small button secondary" } %>
+</div>
+
 </section>
 
