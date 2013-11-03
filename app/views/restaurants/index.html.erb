@@ -1,7 +1,8 @@
+<div class="panel no-margin">
 <% if current_user_recommendations.length == 0 %>
-	<p class="centered">
+	<p class="small-msg centered">
 		<% if restaurants_rated > 0 %>
-		Você já avaliou <%= restaurants_rated %> restaurante(s). Ainda não foi possível gerar
+		Você já avaliou <span class="rating_quantity"><%= restaurants_rated %></span> restaurante(s). Ainda não foi possível gerar
 	uma recomendação. Por favor dê notas a mais alguns restaurantes.
 		<% else %>
 		Você ainda avaliou nenhum restaurante. Comece agora para desfrutar de nossas recomendações.
@@ -11,12 +12,13 @@
 
 <% else %>
 
-	<p class="centered">
-		Você já avaliou <%= restaurants_rated %> restaurante(s). Lembre-se: quanto mais avaliações
+	<p class="small-msg centered">
+		Você já avaliou <%= restaurants_rated %> restaurante(s). Lembre-se: quanto mais avaliações você possuir,
 		melhores serão nossas recomendações.
 	</p>
 
 <% end %>
+</div>
 
 <%= form_tag restaurants_path, :method => 'get', :id => "restaurant_search" do %>
   	<i class="fi-magnifying-glass"></i>

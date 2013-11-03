@@ -11,8 +11,8 @@
 }
 
 .signup-wizard-steps {
-	background: #E8E8E8;
-	color: #AAA;
+	background: #D8D8D8;
+	color: #777;
 	font-size: 9px;
 	float: left;
 	height: 30px;
@@ -42,7 +42,7 @@
 .signup-wizard-steps-arrow {
 	border-top: 15px solid transparent;
 	border-bottom: 15px solid transparent;
-	border-left: 15px solid #E8E8E8;
+	border-left: 15px solid #D8D8D8;
 	height: 0;
 	right: -15px;
 	top: 0;
@@ -53,6 +53,15 @@
 
 .signup-wizard-steps.active .signup-wizard-steps-arrow {
 	border-left: 15px solid $primary-color;
+}
+
+.small-msg {
+	font-size: 11px;
+}
+
+.rating_quantity {
+	font-weight: bold;
+	color: $primary-color;
 }
 
 // GROUP RECOMMENDATION

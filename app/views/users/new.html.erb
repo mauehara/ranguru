@@ -5,7 +5,7 @@
 
 		<h1 class="centered subheader">Ranguru</h1>
 
-		<p class="centered">Descubra nossas recomendações em apenas 3 passos!</p>
+		<p class="small-msg centered">Desfrute de nossas recomendações em apenas 3 passos!</p>
 
 		<%= render 'shared/signup_steps' %>
 
@@ -37,7 +37,7 @@
 				<small class="bold error"><%= @user.errors.messages[:password_confirmation].first %></small>
 			<% end %>
 
-			<%= f.submit "Create my account", class: "button expand" %>
+			<%= f.submit "Próximo", class: "button expand" %>
 
 		<%end %>
 	</div>
