@@ -1,6 +1,22 @@
-<p class="centered">Você já avaliou <%= restaurants_rated %> restaurante(s). Ainda não foi possível gerar
-uma recomendação. Por favor dê notas a mais alguns restaurantes.</p>
-<%= render 'shared/signup_steps' %>
+<% if current_user_recommendations.length == 0 %>
+	<p class="centered">
+		<% if restaurants_rated > 0 %>
+		Você já avaliou <%= restaurants_rated %> restaurante(s). Ainda não foi possível gerar
+	uma recomendação. Por favor dê notas a mais alguns restaurantes.
+		<% else %>
+		Você ainda avaliou nenhum restaurante. Comece agora para desfrutar de nossas recomendações.
+		<% end %>
+	</p>
+	<%= render 'shared/signup_steps' %>
+
+<% else %>
+
+	<p class="centered">
+		Você já avaliou <%= restaurants_rated %> restaurante(s). Lembre-se: quanto mais avaliações
+		melhores serão nossas recomendações.
+	</p>
+
+<% end %>
 
 <%= form_tag restaurants_path, :method => 'get', :id => "restaurant_search" do %>
   	<i class="fi-magnifying-glass"></i>

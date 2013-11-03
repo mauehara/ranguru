@@ -1,6 +1,8 @@
 <section id="home">
 
-<%= render 'shared/signup_steps' %>
+<% if current_user_recommendations.length == 0 %>
+	<%= render 'shared/signup_steps' %>
+<% end %>
 
 <%= button_to "Surprise me Guru", action: "recommender"%>
 <%= button_to "Adicionar amigos", action: "add_friends"%>
