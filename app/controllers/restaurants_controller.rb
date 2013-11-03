@@ -20,6 +20,7 @@ class RestaurantsController < ApplicationController
       csv << [current_user.id, @restaurant_id, @restaurant_rating_value]
     end
 
+    redirect_to root_path
   end
 
 end
