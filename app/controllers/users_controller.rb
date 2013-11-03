@@ -17,12 +17,31 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
-  end
+  	end
+
+	def index
+		@users= User.search(params[:search]).paginate(:page => params[:page], :per_page => 20)
+	end
+
+	def modal
+		@user = User.find(params[:user_id])
+	end
+
+	def add_friend
+		user_id = params[:user_id]
+		add_remove_friend_session(user_id)
+		# redirect_to controler:'welcome', action: 'recommender'
+	end
+
+	def return_to_origin
+		redirect_to root_path
+	end
 
   private
 
   def user_params
   	params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
+
 
 end
