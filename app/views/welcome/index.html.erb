@@ -1,16 +1,12 @@
-<nav> 
-	<section id="home">
-		<% if current_user_recommendations.length == 0 %>
-			<%= render 'shared/signup_steps' %>
-		<% end %>
-		<div class="panel centered">
-			<ul class="nav">        
-		    <li><a href="/welcome/recommender" class="icon-surprise">Surpreenda-me</a></li> 
-		  </ul> 
-		</div>
+<section id="home">
+	<% if current_user_recommendations.length == 0 %>
+		<%= render 'shared/signup_steps' %>
+	<% end %>
+	<ul class="nav centered">        
+    <li><a href="/welcome/recommender" class="icon-surprise">Surpreenda-me</a></li> 
+  </ul> 
 
-		<div class="centered">
-			<%= button_to "Adicionar amigos", { action: "add_friends" }, { class: "small button secondary" } %>
-		</div>
-	</section>
-</nav>
+	<div class="centered">
+		<%= button_to "Adicionar amigos", { action: "add_friends" }, { class: "small button secondary biased" } %>
+	</div>
+</section>
