@@ -5,18 +5,20 @@
 
 <ul id="user_list">
 <% for user in @users %>	
-	<li data-user-id="<%= user.id %>" class="item">
-		    <% if friend_is_in_session(user.id) %> 
-		    	<i class="fi-minus" style="float:left"></i>
-		    <% else %>
-		    	<i class="fi-plus" style="float:left"></i>
-		    <% end %>
-			<div class="info">
-				<span class="user-name"><%= user.name %></span><br/>
-				<span class="user-email"><%= user.email %></span>
-			</div>
-			<div style="clear:both;"></div>
-	</li>
+	<% unless user == current_user %>
+		<li data-user-id="<%= user.id %>" class="item">
+			    <% if friend_is_in_session(user.id) %> 
+			    	<i class="fi-minus" style="float:left"></i>
+			    <% else %>
+			    	<i class="fi-plus" style="float:left"></i>
+			    <% end %>
+				<div class="info">
+					<span class="user-name"><%= user.name %></span><br/>
+					<span class="user-email"><%= user.email %></span>
+				</div>
+				<div style="clear:both;"></div>
+		</li>
+	<% end %>
 <% end %>
 </ul>
 

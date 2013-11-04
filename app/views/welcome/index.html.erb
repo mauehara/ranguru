@@ -1,5 +1,9 @@
-<section id="home">
-<%= button_to "Surprise me Guru", action: "recommender"%>
-<%= button_to "Adicionar amigos", action: "add_friends"%>
-</section>
+<nav>   
+<section id="home">   
+  <ul class="nav">        
+    <li><a href="/welcome/recommender" class="icon-surprise">Surpreenda-me</a></li> 
+  </ul> 
 
+<div style="text-align: center"><%= button_to "Adicionar amigos", action: "add_friends"%></div>
+</section>
+</nav>
