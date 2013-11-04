@@ -1,18 +1,24 @@
-<p>Recomendação (Mahout):  <%= @recommendations[@index_recommendation]%> / Índice: <%=@index_recommendation%></p>
-<div id="restaurant_details" class="panel" >
+<!-- <p>Recomendação (Mahout):  <%= @recommendations[@index_recommendation]%> / Índice: <%=@index_recommendation%></p> -->
+<div id="restaurant_details" class="panel" style="margin-top: 20px;">
 	<img class="radius" src="<%= @restaurant.image_url %>">
 	<div class="info">
 		<span class="restaurant-name"><%= @restaurant.name %></span><br/>
-		<span class="restaurant-address"><%= @restaurant.address %></span>
+		<a href="/welcome/recommender" class="fi-arrow-right"></a>
+		<span class="restaurant-address"><%= @restaurant.address %></span>	<br/><br/>
+		<div style="text-align: center"><%= button_to "Gostei! Vou nele =)", action: "finalize" %></div>	
 	</div>
+	
+	
+	
 	<div style="clear:both;"></div>
 </div>
-<%= button_to "Hoje não.. Próximo!", action: "recommender"%>
-<%= button_to "Gostei! Vou nele =)", action: "finalize" %>
+
+<div style="text-align: center">
 <%= button_to "Adicionar amigos", action: "add_friends"%>
 <%= button_to "Quero começar do zero", action: "index" %>
+</div>
 
-<p><%=@recommendations%></p>
+<!-- <p><%=@recommendations%></p>
 <p><%=@friends%></p>
 <p><%=params[:action] %></p>
 
@@ -20,4 +26,4 @@
 <p><%=@recommendations.length%></p>
 <p><%=(@recommendations[@index_recommendation])[0]%></p>
 <p><%=@index_recommendation_old%></p>
-<p><%=@index_recommendation%></p>
+<p><%=@index_recommendation%></p> -->

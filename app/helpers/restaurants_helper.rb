@@ -29,6 +29,7 @@ module RestaurantsHelper
 
     session[:current_user_recommendations].sort! do |a, b|
       b[1] <=> a[1]
+      
     end
 
     self.current_user_recommendations = session[:current_user_recommendations]

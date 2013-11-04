@@ -1,5 +1,7 @@
 $("#mymodal2 h2").html("<%= @user.name %>");
 $("#user_id").val("<%= @user.id %>");
+$(".add-remove").val("<%= friend_is_in_session(@user.id) ? "Remover" : "Adicionar"  %>");
+$(".add-remove-phrase").text("<%= friend_is_in_session(@user.id) ? "Remova esse amigo" : "Adicione esse amigo"  %>");
 $("#mymodal2 .small button").click(function(){
 	// $(this).siblings().removeClass("active");
 	$(this).addClass("active");

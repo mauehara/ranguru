@@ -49,12 +49,12 @@
 
     <div id="mymodal2" class="centered reveal-modal friend-modal">
       <h2></h2>
-      <p>Adicione esse amigo!</p>
+      <p class="add-remove-phrase"></p>
       <br/>
       <%= form_tag 'users/add_friend', :method => 'post', :id => "user_friend" do %>
         <%= hidden_field_tag 'user_id' %>
         <%= hidden_field_tag 'user_email' %>
-        <%= submit_tag 'Adicionar / Remover', class: "small button" %>
+        <%= submit_tag 'Adicionar / Remover', class: "small button add-remove" %>
       <% end %>
       <a class="close-reveal-modal">&#215;</a>
     </div>
