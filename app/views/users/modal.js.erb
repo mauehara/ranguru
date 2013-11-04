@@ -1,0 +1,8 @@
+$("#mymodal2 h2").html("<%= @user.name %>");
+$("#user_id").val("<%= @user.id %>");
+$("#mymodal2 .small button").click(function(){
+	// $(this).siblings().removeClass("active");
+	$(this).addClass("active");
+	// $("#restaurant_rating_value").val(1);
+	// $("#rating-help").html("Não recomendo nem para a sogra");
+});
