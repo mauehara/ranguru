@@ -1,16 +1,16 @@
-<section id="home">
+<nav> 
+	<section id="home">
+		<% if current_user_recommendations.length == 0 %>
+			<%= render 'shared/signup_steps' %>
+		<% end %>
+		<div class="panel centered">
+			<ul class="nav">        
+		    <li><a href="/welcome/recommender" class="icon-surprise">Surpreenda-me</a></li> 
+		  </ul> 
+		</div>
 
-<% if current_user_recommendations.length == 0 %>
-	<%= render 'shared/signup_steps' %>
-<% end %>
-
-<div class="panel centered">
-	<%= button_to "Surprise me\n Guru", { action: "recommender" }, { class: "magic-button" } %>
-</div>
-
-<div class="centered">
-	<%= button_to "Adicionar amigos", { action: "add_friends" }, { class: "small button secondary" } %>
-</div>
-
-</section>
-
+		<div class="centered">
+			<%= button_to "Adicionar amigos", { action: "add_friends" }, { class: "small button secondary" } %>
+		</div>
+	</section>
+</nav>
