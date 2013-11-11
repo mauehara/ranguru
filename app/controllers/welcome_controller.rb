@@ -22,6 +22,10 @@ class WelcomeController < ApplicationController
     reset_current_user_recommendations
     @restaurant = Restaurant.find(restaurant_id)
     @recommendation = Recommendation.create(user_id: current_user.id, restaurant_id: restaurant_id)
+
+    # Sending a e-mail requesting for feedback.
+    ModelMailer.request_feedback_notification(current_user, @restaurant).deliver
+
   end
 
   def add_friends

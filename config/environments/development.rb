@@ -26,4 +26,15 @@ Ranguru::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+
+  # Sending e-mails using Mailgun service.s
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :authentication => :plain,
+    :address => "smtp.mailgun.org",
+    :port => 587,
+    :domain => "ranguru.mailgun.org",
+    :user_name => "postmaster@ranguru.mailgun.org",
+    :password => "6nspc5hd-366"
+  }
 end
