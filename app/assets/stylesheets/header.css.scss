@@ -1,0 +1,19 @@
+@import "variables";
+
+#header {
+	background-color: $primary-color;
+	padding: 25px 15px 15px 15px;
+	width: 100%;
+}
+#header h1 {
+	color: $secondary-color;
+	font-size: 25px;
+	margin: 0;
+	line-height: 18px;
+}
+.menu-icon {
+	color: $secondary-color;
+	float: left;
+	font-size: 25px;
+	margin-top: -3px;
+}

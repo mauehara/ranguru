@@ -1,0 +1,12 @@
+<% for restaurant in @restaurants %>
+	<% if !restaurant.ratings.where(user_id: session[:current_user_id]).first %>
+	<li data-restaurant-id="<%= restaurant.id %>" class="item">
+			<img class="radius" src="<%= restaurant.image_url %>">
+			<div class="info">
+				<span class="restaurant-name"><%= restaurant.name %></span><br/>
+				<span class="restaurant-address"><%= restaurant.address %></span>
+			</div>
+			<div style="clear:both;"></div>
+	</li>
+	<% end %>
+<% end %>

@@ -12,5 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require foundation
+//= require foundation/jquery.offcanvas
 //= require turbolinks
+//= require restaurant
 //= require_tree .
+
+$(document).foundation();

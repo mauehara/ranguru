@@ -1,0 +1,120 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "variables";
+
+// SIGNUP WIZARD
+
+.signup-wizard {
+	height: 30px;
+}
+
+.signup-wizard-steps {
+	background: #D8D8D8;
+	color: #777;
+	font-size: 9px;
+	float: left;
+	height: 30px;
+	line-height: 30px;
+	text-indent: 20px;
+	width: 33%;
+	position: relative;
+}
+
+.signup-wizard-steps.active {
+	background: $primary-color;
+	color: $secondary-color;
+	text-indent: 5px;
+}
+
+.signup-wizard-steps.second {
+	text-indent: 30px;
+	width: 34%;
+}
+.signup-wizard-steps.first {
+	text-indent: 10px;
+}
+.signup-wizard-steps.third.active {
+	text-indent: 20px;
+}
+
+.signup-wizard-steps-arrow {
+	border-top: 15px solid transparent;
+	border-bottom: 15px solid transparent;
+	border-left: 15px solid #D8D8D8;
+	height: 0;
+	right: -15px;
+	top: 0;
+	position: absolute;
+	width: 0;
+	z-index: 2;
+}
+
+.signup-wizard-steps.active .signup-wizard-steps-arrow {
+	border-left: 15px solid $primary-color;
+}
+
+.small-msg {
+	font-size: 11px;
+}
+
+.rating_quantity {
+	font-weight: bold;
+	color: $primary-color;
+}
+
+// GROUP RECOMMENDATION
+#user_search {
+	background-color: $primary-color;
+	margin-bottom: 0;
+	padding: 15px 15px;
+}
+#user_search input[type=text] {
+	background-color: $secondary-color;
+	border: none;
+	box-shadow: none;
+	margin-bottom: 0;
+	padding-left: 25px;
+}
+#user_search i {
+	color: #AAA;
+	font-size: 18px;
+	line-height: 33px;
+	margin-left: 5px;
+	margin-right: 5px;
+	position: absolute;
+}
+#user_list li {
+	border-top: 1px solid #F8F8F8;
+	border-bottom: 1px solid #DDD;
+	display: block;
+	padding: 15px 15px;
+}
+#user_list li img {
+	float: left;
+	width: 50px;
+	height: 50px;
+}
+#user_list li .info {
+	float: left;
+	font-size: 11px;
+	margin-bottom: 0;
+	padding: 5px;
+}
+#user_list li .info .user-name {
+	font-weight: bold;
+}
+#user_list li .info .user-email {
+	font-size: 9px;
+	color: #777;
+}
+
+.user_list .fi-plus {
+	color: #BBB;
+	font-size: 30px;
+}
+.user_list .fi-plus.active {
+	color: $primary-color;
+	font-size: 30px;
+}

@@ -1,0 +1,44 @@
+<% provide(:title, 'Sign up') %>
+
+<div class="row">
+	<div class="sign-up small-9 small-centered columns">
+
+		<h1 class="centered subheader">Ranguru</h1>
+
+		<p class="small-msg centered">Desfrute de nossas recomendações em apenas 3 passos!</p>
+
+		<%= render 'shared/signup_steps' %>
+
+		<%= form_for(@user) do |f| %>
+
+			<!-- <%= render 'shared/error_messages' %>-->
+
+			<!-- <%= f.label :name %> -->
+			<%= f.text_field :name, placeholder: "Name" %>
+			<% if @user.errors.any? && !@user.errors.messages[:name].empty? %>
+				<small class="bold error"><%= @user.errors.messages[:name].first %></small>
+			<% end %>
+
+			<!-- <%= f.label :email %> -->
+			<%= f.text_field :email, placeholder: "Email" %>
+			<% if @user.errors.any? && !@user.errors.messages[:email].empty? %>
+				<small class="bold error"><%= @user.errors.messages[:email].first %></small>
+			<% end %>
+
+			<!-- <%= f.label :password %> -->
+			<%= f.password_field :password, placeholder: "Password" %>
+			<% if @user.errors.any? && !@user.errors.messages[:password].empty? %>
+				<small class="bold error"><%= @user.errors.messages[:password].first %></small>
+			<% end %>
+
+			<!-- <%= f.label :password_confirmation, "Confirmation" %> -->
+			<%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
+			<% if @user.errors.any? && !@user.errors.messages[:password_confirmation].empty? %>
+				<small class="bold error"><%= @user.errors.messages[:password_confirmation].first %></small>
+			<% end %>
+
+			<%= f.submit "Próximo", class: "button expand" %>
+
+		<%end %>
+	</div>
+</div>

@@ -1,0 +1,49 @@
+// Reset previous ratings
+$("#mymodal .fi-star").removeClass("active");
+$("#restaurant_rating_value").val("");
+$("#rating-help").html("");
+
+// Populating modal with restaurants information
+$("#mymodal h2").html("<%= @restaurant.name %>");
+$("#mymodal h6").html("<%= @restaurant.address %>");
+$("#restaurant_id").val("<%= @restaurant.id %>");
+$("#mymodal .1-star").click(function(){
+	$(this).siblings().removeClass("active");
+	$(this).addClass("active");
+	$("#restaurant_rating_value").val(1);
+	$("#rating-help").html("Não recomendo nem para a sogra");
+});
+$("#mymodal .2-star").click(function(){
+	$(this).siblings().removeClass("active");
+	$(this).siblings(".1-star").addClass("active");
+	$(this).addClass("active");
+	$("#restaurant_rating_value").val(2);
+	$("#rating-help").html("Estilo bandejão");
+});
+$("#mymodal .3-star").click(function(){
+	$(this).siblings().removeClass("active");
+	$(this).siblings(".1-star").addClass("active");
+	$(this).siblings(".2-star").addClass("active");
+	$(this).addClass("active");
+	$("#restaurant_rating_value").val(3);
+	$("#rating-help").html("Comível");
+});
+$("#mymodal .4-star").click(function(){
+	$(this).siblings().removeClass("active");
+	$(this).siblings(".1-star").addClass("active");
+	$(this).siblings(".2-star").addClass("active");
+	$(this).siblings(".3-star").addClass("active");
+	$(this).addClass("active");
+	$("#restaurant_rating_value").val(4);
+	$("#rating-help").html("Recomendo aos melhores amigos");
+});
+$("#mymodal .5-star").click(function(){
+	$(this).siblings().removeClass("active");
+	$(this).siblings(".1-star").addClass("active");
+	$(this).siblings(".2-star").addClass("active");
+	$(this).siblings(".3-star").addClass("active");
+	$(this).siblings(".4-star").addClass("active");
+	$(this).addClass("active");
+	$("#restaurant_rating_value").val(5);
+	$("#rating-help").html("Casaria com o chef");
+});

@@ -1,0 +1,84 @@
+// Place all the styles related to the restaurant controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "variables";
+
+#restaurant_search {
+	background-color: $primary-color;
+	margin-bottom: 0;
+	padding: 15px 15px;
+}
+#restaurant_search input[type=text] {
+	background-color: $secondary-color;
+	border: none;
+	box-shadow: none;
+	margin-bottom: 0;
+	padding-left: 25px;
+}
+#restaurant_search i {
+	color: #AAA;
+	font-size: 18px;
+	line-height: 33px;
+	margin-left: 5px;
+	margin-right: 5px;
+	position: absolute;
+}
+#restaurant_list {
+	padding-bottom: 50px;
+}
+#restaurant_list li {
+	border-top: 1px solid #F8F8F8;
+	border-bottom: 1px solid #DDD;
+	background-color: #E9E9E9;
+	display: block;
+	padding: 15px 15px;
+}
+#restaurant_list li img {
+	float: left;
+	width: 50px;
+	height: 50px;
+}
+#restaurant_list li .info {
+	float: left;
+	font-size: 11px;
+	margin-bottom: 0;
+	padding: 5px;
+}
+#restaurant_list li .info .restaurant-name {
+	font-weight: bold;
+}
+#restaurant_list li .info .restaurant-address {
+	font-size: 9px;
+	color: #777;
+}
+#restaurant_details {
+	margin-left:5%; 
+	margin-right:5%; 
+	text-align:center;
+}
+#restaurant_details .info .restaurant-name {
+	font-weight: bold;
+}
+#restaurant_details .info .restaurant-address {
+	font-size: 9px;
+	color: #777;
+}
+.rating-modal .fi-star {
+	color: #BBB;
+	font-size: 30px;
+}
+.rating-modal .fi-star.active {
+	color: $primary-color;
+	font-size: 30px;
+}
+
+#restaurant_rating input[type=submit] {
+	margin-top: 15px;
+}
+#rating-help {
+	color: $primary-color;
+	font-size: 11px;
+	font-weight: bold;
+	vertical-align: text-top;
+	margin-left: 10px;
+}

@@ -1,0 +1,19 @@
+.centered {
+	text-align: center;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+       -o-border-radius: $radius;
+          border-radius: $radius;
+}
+
+.no-margin {
+	margin: 0;
+}

@@ -1,14 +1,62 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Ranguru</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+  <head>
+  	<meta charset="utf-8" />
 
-<%= yield %>
+  	<!-- Uncomment to make IE8 render like IE7 -->
+  	<!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
 
-</body>
+  	<!-- Set the viewport width to device width for mobile -->
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+
+  	<%= stylesheet_link_tag    "application" %>
+  	<%= javascript_include_tag "vendor/custom.modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body id="page" class="off-canvas hide-extras">
+    <% if signed_in? %><%= render "layouts/sidebar" %><% end %>
+    <section role="main">
+      <% if signed_in? %><%= render "layouts/header" %><% end %>
+      <%= yield %>
+    </section>
+
+    <%= javascript_include_tag "application" %>
+
+    <div id="mymodal" class="centered reveal-modal rating-modal">
+      <h2></h2>
+      <h6 class="subheader"></h6><br/>
+      <p>Avalie esse restaurante!</p>
+      <i class="1-star fi-star"></i>
+      <i class="2-star fi-star"></i>
+      <i class="3-star fi-star"></i>
+      <i class="4-star fi-star"></i>
+      <i class="5-star fi-star"></i><br/><br/>
+      <span id="rating-help"></span>
+      <%= form_tag restaurants_rate_path, :method => 'post', :id => "restaurant_rating" do %>
+        <%= hidden_field_tag 'restaurant_id' %>
+        <%= hidden_field_tag 'restaurant_rating_value' %>
+        <%= submit_tag 'Avaliar', class: "small button" %>
+      <% end %>
+      <a class="close-reveal-modal">&#215;</a>
+    </div>
+
+    <div id="mymodal2" class="centered reveal-modal friend-modal">
+      <h2></h2>
+      <p class="add-remove-phrase"></p>
+      <br/>
+      <%= form_tag 'users/add_friend', :method => 'post', :id => "user_friend" do %>
+        <%= hidden_field_tag 'user_id' %>
+        <%= hidden_field_tag 'user_email' %>
+        <%= submit_tag 'Adicionar / Remover', class: "small button add-remove" %>
+      <% end %>
+      <a class="close-reveal-modal">&#215;</a>
+    </div>
+  </body>
 </html>

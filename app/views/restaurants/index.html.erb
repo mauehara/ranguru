@@ -1,0 +1,35 @@
+<div class="panel no-margin">
+<% if current_user_recommendations.length == 0 %>
+	<p class="small-msg centered">
+		<% if restaurants_rated > 0 %>
+		Você já avaliou <span class="rating_quantity"><%= restaurants_rated %></span> restaurante(s). Ainda não foi possível gerar
+	uma recomendação. Por favor dê notas a mais alguns restaurantes.
+		<% else %>
+		Você ainda não avaliou nenhum restaurante. Comece agora para desfrutar de nossas recomendações.
+		<% end %>
+	</p>
+	<%= render 'shared/signup_steps' %>
+
+<% else %>
+
+	<p class="small-msg centered">
+		Você já avaliou <%= restaurants_rated %> restaurante(s). Lembre-se: quanto mais avaliações você possuir,
+		melhores serão nossas recomendações.
+	</p>
+
+<% end %>
+</div>
+
+<%= form_tag restaurants_path, :method => 'get', :id => "restaurant_search" do %>
+  	<i class="fi-magnifying-glass"></i>
+    <%= text_field_tag :search, params[:search], placeholder: "Buscar Restaurantes" %>
+<% end %>
+
+<ul id="restaurant_list">
+	<%= render 'restaurants/restaurants' %>
+	<% if @restaurants.total_pages > 1 %>
+		<li id="item-load-more">
+			<a>Mostrar mais restaurantes...</a>
+		</li>
+	<% end %>
+</ul>
