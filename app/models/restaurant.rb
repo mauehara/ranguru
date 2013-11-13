@@ -10,4 +10,12 @@ class Restaurant < ActiveRecord::Base
   	end
 	end
 
+	def self.search_rated(search, user_id)
+		if search
+    	joins(:users).where('restaurants.name LIKE ? AND users.id = ?', "%#{search}%", "#{user_id}")
+  	else
+    	joins(:users).where(users: {id: user_id})
+  	end
+	end
+
 end

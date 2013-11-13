@@ -22,12 +22,12 @@
 
 <div>
 	<ul>
-		<li><%= link_to "Todos", controller: "restaurants", action: "index" %></li>
+		<li><%= link_to "Todos", restaurants_path %></li>
 		<li><%= link_to "Avaliados", controller: "restaurants", action: "rated" %></li>
 	</ul>
 </div>
 
-<%= form_tag restaurants_path, :method => 'get', :id => "restaurant_search" do %>
+<%= form_tag restaurants_rated_path, :method => 'get', :id => "restaurant_search" do %>
   	<i class="fi-magnifying-glass"></i>
     <%= text_field_tag :search, params[:search], placeholder: "Buscar Restaurantes" %>
 <% end %>

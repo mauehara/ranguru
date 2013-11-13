@@ -6,6 +6,10 @@ class RestaurantsController < ApplicationController
   	@restaurants = Restaurant.search(params[:search]).paginate(:page => params[:page], :per_page => 20)
   end
 
+  def rated
+    @restaurants = Restaurant.search_rated(params[:search], current_user.id).paginate(:page => params[:page], :per_page => 20)
+  end
+
   def modal
   	@restaurant = Restaurant.find(params[:restaurant_id])
   end
