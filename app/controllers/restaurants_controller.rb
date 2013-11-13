@@ -12,12 +12,19 @@ class RestaurantsController < ApplicationController
 
   def modal
   	@restaurant = Restaurant.find(params[:restaurant_id])
+    @restaurant_rating = @restaurant.ratings.where('ratings.user_id = ?', "#{current_user.id}").first
+    if !@restaurant_rating.nil? 
+      @restaurant_rating_value = @restaurant_rating.rating
+    end
   end
 
   def rate
   	@restaurant_id = params[:restaurant_id]
   	@restaurant_rating_value = params[:restaurant_rating_value]
-  	if @rating = Rating.create(user_id: current_user.id, restaurant_id: @restaurant_id, rating: @restaurant_rating_value)
+  	@rating = Rating.find_or_initialize_by(user_id: current_user.id, restaurant_id: @restaurant_id)
+    @rating.rating = @restaurant_rating_value
+
+    if @rating.save
       add_rating(current_user.id, @restaurant_id, @restaurant_rating_value)
     end
     

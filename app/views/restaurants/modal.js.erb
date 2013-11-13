@@ -6,6 +6,20 @@ $("#rating-help").html("");
 // Populating modal with restaurants information
 $("#mymodal h2").html("<%= @restaurant.name %>");
 $("#mymodal h6").html("<%= @restaurant.address %>");
+$("#mymodal input[type=submit]").val("Avaliar");
+$(".instruction").html("Avalie esse restaurante!");
+$("#restaurant_rating_value").val(0);
+
+// Initialize rating input if the restaurant has already been rated.
+<% if @restaurant_rating_value %>
+	$("#mymodal input[type=submit]").val("Alterar Avaliação");
+	$(".instruction").html("Altere sua avaliação caso desejar!");
+	$("#restaurant_rating_value").val(<%= @restaurant_rating_value %>);
+	<% while @restaurant_rating_value > 0 %>
+		$("#mymodal .<%= @restaurant_rating_value %>-star").addClass("active");
+		<%= @restaurant_rating_value = @restaurant_rating_value - 1 %>
+	<% end %>
+<% end %>
 $("#restaurant_id").val("<%= @restaurant.id %>");
 $("#mymodal .1-star").click(function(){
 	$(this).siblings().removeClass("active");
