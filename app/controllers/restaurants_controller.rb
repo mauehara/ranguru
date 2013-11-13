@@ -1,6 +1,4 @@
 class RestaurantsController < ApplicationController
-  
-  require 'CSV'
 
   def index
   	@restaurants = Restaurant.search(params[:search]).paginate(:page => params[:page], :per_page => 20)
@@ -25,20 +23,10 @@ class RestaurantsController < ApplicationController
     @rating.rating = @restaurant_rating_value
 
     if @rating.save
-      add_rating(current_user.id, @restaurant_id, @restaurant_rating_value)
+      Rating.save_to_csv # Solução temporária ao problema da lentidão do mysql
     end
     
     redirect_to root_path
-  end
-
-  private
-
-  # Solução temporária ao problema da lentidão do mysql
-
-  def add_rating(user_id, restaurant_id, rating)
-    CSV.open("_ratings.csv", "ab") do |csv|
-      csv << [user_id, restaurant_id, rating]
-    end
-  end
+  end 
 
 end
