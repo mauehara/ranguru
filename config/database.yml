@@ -1,11 +1,17 @@
-development:
-  adapter: jdbcmysql
-  database: ranguru
-  username: root
-  password: 123456
+# development:
+#   adapter: jdbcmysql
+#   database: ranguru
+#   username: root
+#   password: 123456
 
-test:
-  adapter: jdbcmysql
-  database: ranguru_test
-  username: root
-  password: 123456
+# test:
+#   adapter: jdbcmysql
+#   database: ranguru_test
+#   username: root
+#   password: 123456
+
+development:
+  adapter: postgresql
+  host: localhost
+  username: user
+  database: app-dev
