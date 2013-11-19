@@ -9,9 +9,3 @@ test:
   database: ranguru_test
   username: root
   password: 123456
-
-production:
-  adapter: jdbcmysql
-  database: ranguru_test
-  username: root
-  password: 123456
