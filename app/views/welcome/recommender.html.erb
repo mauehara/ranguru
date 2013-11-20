@@ -1,5 +1,47 @@
 <!-- <p>Recomendação (Mahout):  <%= @recommendations[@index_recommendation]%> / Índice: <%=@index_recommendation%></p> -->
-<div id="restaurant_details" class="panel" style="margin-top: 20px;">
+
+
+<h4 class="subheader" style="text-align:center">Recomendado para você!</h4>
+<div class="large-12 columns"> 
+  <div class="large-10 large-centered columns">
+    <div class="slideshow-wrapper">                 
+      <span class="preloader"></span>
+        <ul id="featured1" data-orbit data-options="pause_on_hover:false; timer_speed:5000;">
+          <% @recommendations.each do |recommendation| 
+          restaurant = Restaurant.find(recommendation[0])
+          %>
+            <li>
+              <img src="<%= restaurant.image_url %>" />
+              <div class="orbit-caption">
+                <%=restaurant.name%>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+    </div>
+  </div>
+</div>
+<hr>
+<!-- 
+<div id="mymodal" class="centered reveal-modal rating-modal"> -->
+<div id="rating-restaurant" class="centered rating-div">
+  <p>Já conhece esse restaurante? Avalie!</p>
+  <i class="1-star fi-star"></i>
+  <i class="2-star fi-star"></i>
+  <i class="3-star fi-star"></i>
+  <i class="4-star fi-star"></i>
+  <i class="5-star fi-star"></i><br/><br/>
+  <p id="rating-help-recommendation"></p>
+<!--   <%= form_tag restaurants_rate_path, :method => 'post', :id => "restaurant_rating" do %>
+    <%= hidden_field_tag 'restaurant_id' %>
+    <%= hidden_field_tag 'restaurant_rating_value' %>
+    <%= submit_tag 'Avaliar', class: "small button" %>
+  <% end %>
+  <a class="close-reveal-modal">&#215;</a> -->
+</div>
+
+
+<!-- <div id="restaurant_details" class="panel" style="margin-top: 20px;">
 	<img class="radius" src="<%= @restaurant.image_url %>">
 	<div class="info">
 		<span class="restaurant-name"><%= @restaurant.name %></span><br/>
@@ -12,11 +54,17 @@
 	
 	<div style="clear:both;"></div>
 </div>
-
-<div style="text-align: center">
-<%= button_to "Adicionar amigos", action: "add_friends"%>
-<%= button_to "Quero começar do zero", action: "index" %>
+ -->
+<div class="centered ">
+  <a class="round large button fi-plus" href="/welcome/add_friends"></a>
 </div>
+<div class="centered " style="margin-top: -110px;margin-left: 60px;">
+  <a class="custom buttony round tiny button" href="/welcome/add_friends"><%=@number_friends%></a>
+</div>
+<div class="centered " style="margin-top: 60px;">
+  <a class="round medium button" href="/welcome/index">Começar do Zero</a>
+</div>
+
 
 <!-- <p><%=@recommendations%></p>
 <p><%=@friends%></p>
