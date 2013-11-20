@@ -3,10 +3,14 @@
 		<%= render 'shared/signup_steps' %>
 	<% end %>
 	<ul class="nav centered">        
-    <li><a href="/welcome/recommender" class="icon-surprise">Surpreenda-me</a></li> 
-  </ul> 
+		<li><a href="/welcome/recommender" class="icon-surprise"><img 
+src="assets/crystal_ball_2.png" /></a></li> 
+	</ul> 
 
-	<div class="centered">
-		<%= button_to "Adicionar amigos", { action: "add_friends" }, { class: "small button secondary biased" } %>
+	<div class="centered ">
+		<a class="round large button fi-plus" href="/welcome/add_friends"></a>
+	</div>
+    <div class="centered " style="margin-top: -110px;margin-left: 60px;">
+		<a class="custom buttony round tiny button" href="/welcome/add_friends"><%=@number_friends%></a>
 	</div>
 </section>
