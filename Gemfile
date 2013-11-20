@@ -32,3 +32,5 @@ end
 gem 'puma'
 gem 'pry'
 gem 'rack-offline'
+
+gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
