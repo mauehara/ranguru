@@ -4,10 +4,11 @@ class WelcomeController < ApplicationController
   before_filter :set_index_recommendation
 
   def index
-	
+	 @number_friends = session[:friends].count
   end
 
   def recommender  	
+    @number_friends = session[:friends].count
   	@recommendations = current_user_recommendations  
     @index_recommendation = index_recommendation
   	restaurant_id = (@recommendations[@index_recommendation])[0]
