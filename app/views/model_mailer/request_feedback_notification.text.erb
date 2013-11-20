@@ -1,9 +1,102 @@
-Olá <%= @user.name %>,
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Ranguru</title>
+  </head>
+  <body bgcolor="#EEE" background="#EEE" style="background: #EEE; color: #666;">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-family: Arial, sans-serif; font-size: 12px; background: #EEE; padding: 0 40px 0 50px;">
+      <td align="center" style="padding-bottom: 10px;">
+        
+      </td>
+      <tr>
+        <td>
+          <table width="600"  align="center" cellspacing="0" cellpadding="0"
+                 style="
+                  background-color: #FFF;
+                  color: #000;
+                  -webkit-box-shadow: 0px 0px 5px #CCC;
+                     -moz-box-shadow: 0px 0px 5px #CCC;
+                          box-shadow: 0px 0px 5px #CCC;
+                  -webkit-border-radius: 10px;
+                     -moz-border-radius: 10px;
+                          border-radius: 10px;">
+            <!-- TOPO -->
+            <tr>
+              <td height="104">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0" style="padding: 0 20px;">
+                  <tr>
+                    <td>
+                      <a href="http://www.ranguru.com.br" target="_blank" title="Site Ranguru">
+                        <img src="/assets/ranguru-icon.jpg" alt="Ranguru" style="display: block; width:"100%"; height:"10%";>
+                      </a>
+                    </td>
+                    <td align="right" style="color: #666; font-size: 14px;">
 
-Como foi jantar no <%= @restaurant.name %> ?
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <!-- TOPO -->
+            <tr>
+              <td style="line-height:1.5em; padding: 0 0 20px 0; font-size: 13px;">
+                <img src="http://emails-getninjas.s3.amazonaws.com/images/hr.jpg" style="display: block;">
+              </td>
+            </tr>
+            <tr>
+              <td style="line-height:1.5em; padding: 0 0 20px 0; font-size: 13px;">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td>
+                      <div style="padding: 0 30px; color: #666;">
 
-Melhore suas recomendações dando uma nota para ele.
+                          <div style="font-family: sans-serif; font-size: 14px; margin-top: 20px;">
 
-Um abraço,
+                          <h2 style="color: #777; font-size: 14px;margin-bottom: 30px;">Olá, [Nome]. Tudo bem?</h2>
 
-Equipe Ranguru.
+        <div style="text-align: justify">
+                          <p>Gostaríamos de saber como foi sua experiência no "<%= @restaurant.name %>".</p>
+						  <p><img src="<%= @restaurant.image_url%>" style="display: block;text-align:center;"></p>
+						  <p>Para avaliar clique [aqui].</p>
+						  <p>Avaliando restaurantes você ajuda nosso Guru a prever recomendações cada vez melhores!</p>
+
+       </div>
+                        </div>
+                 </div>
+                    </td>
+                  </tr>
+              <tr>
+                    <td align="right">
+                      <div style="width: 200px; display: table; margin-right: 30px; text-align: center; color: #666;">
+      <p style="font-size: 14px;">Um abraço</p>
+                       <span style="font-weight:bold;">TIME RANGURU</span>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table width="630" align="center" cellspacing="0" cellpadding="0" style="padding: 20px 15px; color: #777; font-size: 12px;">
+            <tr>
+              <td align="center">
+                <p style="margin: 0;">Você está recebendo este e-mail porque é um membro do Ranguru.<br/><br/>
+                  Qualquer dúvida ou sugestão fale conosco pelo:<br/>
+                  <a href="mailto:contato@ranguru.com.br" target="_blank" style="color: #00a9eb; text-decoration: none;">contato@ranguru.com.br</a>
+                  <br />
+                  <br />
+                </p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
