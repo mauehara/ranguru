@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/rails/activerecord-session_store.git
+  revision: a0753820f0032dec7c37441be93ffc76b9dce3d0
+  specs:
+    activerecord-session_store (0.1.0)
+      actionpack (>= 4.0.0, < 5)
+      activerecord (>= 4.0.0, < 5)
+      railties (>= 4.0.0, < 5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -146,6 +155,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord-jdbc-adapter
   activerecord-jdbcmysql-adapter
+  activerecord-session_store!
   bcrypt-ruby (~> 3.0.1)
   coffee-rails (~> 4.0.0)
   jbuilder (~> 1.2)
