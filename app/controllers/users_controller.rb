@@ -18,7 +18,7 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
-  end
+  	end
 
 	def index
 		@users= User.search(params[:search]).paginate(:page => params[:page], :per_page => 20)
@@ -35,7 +35,8 @@ class UsersController < ApplicationController
 	end
 
 	def return_to_origin
-		redirect_to root_path
+		redirect_to :controller => 'welcome', :action => 'recommender'
+      	return
 	end
 
   private

@@ -1,7 +1,7 @@
 <!-- <p>Recomendação (Mahout):  <%= @recommendations[@index_recommendation]%> / Índice: <%=@index_recommendation%></p> -->
 
 
-<h4 class="subheader" style="text-align:center">Recomendado para você!</h4>
+<h4 class="subheader" style="text-align:center">Recomendações do Guru para você!</h4>
 <div class="large-12 columns"> 
   <div class="large-10 large-centered columns">
     <div class="slideshow-wrapper">                 
@@ -16,25 +16,25 @@
                 <%=restaurant.name%>
               </div>
             
-            <!-- 
-<div id="mymodal" class="centered reveal-modal rating-modal"> -->
-<div id="rating-restaurant" class="centered rating-div">
-  <p style= "margin-bottom: -3px">Já conhece esse restaurante? Avalie!</p>
-  <a class="1-star fi-star" href="/restaurants/rate?restaurant_id=<%=restaurant.id%>&restaurant_rating_value=1&recommendation=true"></a>
-  <a class="2-star fi-star" href="/restaurants/rate?restaurant_id=<%=restaurant.id%>&restaurant_rating_value=2&recommendation=true"></a>
-  <a class="3-star fi-star" href="/restaurants/rate?restaurant_id=<%=restaurant.id%>&restaurant_rating_value=3&recommendation=true"></a>
-  <a class="4-star fi-star" href="/restaurants/rate?restaurant_id=<%=restaurant.id%>&restaurant_rating_value=4&recommendation=true"></a>
-  <a class="5-star fi-star" href="/restaurants/rate?restaurant_id=<%=restaurant.id%>&restaurant_rating_value=5&recommendation=true"></a>
-  <br/><br/>
-  <p id="rating-help-recommendation"></p>
-<!--   <%= form_tag restaurants_rate_path, :method => 'post', :id => "restaurant_rating" do %>
-    <%= hidden_field_tag 'restaurant_id' %>
-    <%= hidden_field_tag 'restaurant_rating_value' %>
-    <%= submit_tag 'Avaliar', class: "small button" %>
-  <% end %>
-  <a class="close-reveal-modal">&#215;</a> -->
-</div>
-</li>
+                          <!-- 
+              <div id="mymodal" class="centered reveal-modal rating-modal"> -->
+              <div id="rating-restaurant" class="centered rating-div">
+                <p style= "margin-bottom: -3px">Já conhece esse restaurante? Avalie!</p>
+                <a class="1-star fi-star" href="/restaurants/rate?restaurant_id=<%=restaurant.id%>&restaurant_rating_value=1&recommendation=true"></a>
+                <a class="2-star fi-star" href="/restaurants/rate?restaurant_id=<%=restaurant.id%>&restaurant_rating_value=2&recommendation=true"></a>
+                <a class="3-star fi-star" href="/restaurants/rate?restaurant_id=<%=restaurant.id%>&restaurant_rating_value=3&recommendation=true"></a>
+                <a class="4-star fi-star" href="/restaurants/rate?restaurant_id=<%=restaurant.id%>&restaurant_rating_value=4&recommendation=true"></a>
+                <a class="5-star fi-star" href="/restaurants/rate?restaurant_id=<%=restaurant.id%>&restaurant_rating_value=5&recommendation=true"></a>
+                <br/><br/>
+                <p id="rating-help-recommendation"></p>
+              <!--   <%= form_tag restaurants_rate_path, :method => 'post', :id => "restaurant_rating" do %>
+                  <%= hidden_field_tag 'restaurant_id' %>
+                  <%= hidden_field_tag 'restaurant_rating_value' %>
+                  <%= submit_tag 'Avaliar', class: "small button" %>
+                <% end %>
+                <a class="close-reveal-modal">&#215;</a> -->
+              </div>
+            </li>
           <% end %>
         </ul>
     </div>
