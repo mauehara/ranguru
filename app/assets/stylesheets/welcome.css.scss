@@ -158,14 +158,13 @@ h1 {
 
 .orbit-container { height:100%; width:100%; }  
 
-.orbit-container img { height: 100%; width:100%;  }  
+.orbit-container img { height: 100%;   }  
 
 .orbit-container .orbit-slides-container > * {
   position: relative;
   margin-left: 0;
   float: left;
   height: 100%;
-  width:100%; 
 }
 
 .buttony.custom{
@@ -173,13 +172,19 @@ h1 {
     border-color: rgb(255, 255, 255);
 }
 
+.rating-div{
+  font-size: 15px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
 .rating-div .fi-star {
   color: #BBB;
-  font-size: 30px;
+  font-size: 20px;
 }
 .rating-div .fi-star.active {
   color: $primary-color;
-  font-size: 30px;
+  font-size: 20px;
 }
 
 #rating-help-recommendation {
@@ -189,3 +194,4 @@ h1 {
   vertical-align: text-top;
   margin-left: 10px;
 }
+

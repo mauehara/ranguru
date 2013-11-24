@@ -26,6 +26,11 @@ class RestaurantsController < ApplicationController
     if @rating.save
       Rating.save_to_csv # Solução temporária ao problema da lentidão do mysql
     end
+
+    if params[:recommendation] == "true"
+      redirect_to :back
+      return
+    end
     
     redirect_to root_path
   end 
