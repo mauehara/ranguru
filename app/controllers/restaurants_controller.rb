@@ -1,5 +1,4 @@
 class RestaurantsController < ApplicationController
- 
   require 'csv'
 
   def index
