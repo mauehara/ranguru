@@ -158,7 +158,7 @@ h1 {
 
 .orbit-container { height:100%; width:100%; }  
 
-.orbit-container img { height: 100%;   }  
+.orbit-container img { width: 100%; margin-left: 0 !important; }
 
 .orbit-container .orbit-slides-container > * {
   position: relative;
