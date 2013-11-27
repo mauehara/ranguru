@@ -1,6 +1,6 @@
 <% for restaurant in @restaurants %>
 	<li data-restaurant-id="<%= restaurant.id %>" class="item">
-			<img class="radius" src="<%= restaurant.image_url %>">
+			<img class="radius" src="<%= restaurant.image_url.nil? ? '/assets/default-restaurant-img.png' : restaurant.image_url%>">
 			<div class="info">
 				<span class="restaurant-name"><%= restaurant.name %></span><br/>
 				<span class="restaurant-address"><%= restaurant.address %></span>
