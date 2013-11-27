@@ -49,10 +49,10 @@ ActiveRecord::Schema.define(version: 20131116030848) do
   add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
 
   create_table "users", force: true do |t|
-    t.string   "name"
     t.string   "yelp_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
     t.string   "email"
     t.string   "password_digest"
   end
