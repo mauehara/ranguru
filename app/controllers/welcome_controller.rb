@@ -7,6 +7,11 @@ class WelcomeController < ApplicationController
 	 @number_friends = session[:friends].count
   end
 
+  def reset
+   reset_session
+   redirect_to root_url
+  end
+
   def recommender  	
     @number_friends = session[:friends].count
   	@recommendations = current_user_recommendations  
