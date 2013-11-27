@@ -69,4 +69,8 @@ module SessionsHelper
   	friend = User.find(user_id)
     session[:friends].include?(friend)
   end
+
+  def reset_session
+  	session[:friends] = []
+  end
 end

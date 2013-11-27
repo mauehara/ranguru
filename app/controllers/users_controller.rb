@@ -35,7 +35,7 @@ class UsersController < ApplicationController
 	end
 
 	def return_to_origin
-		redirect_to :controller => 'welcome', :action => 'recommender'
+		redirect_to root_url
       	return
 	end
 
