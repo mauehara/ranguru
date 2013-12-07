@@ -41,12 +41,10 @@ class UsersController < ApplicationController
 	    	return
 	    else
 	      if friends_return == "recommender"
-	    	 redirect_to controler:'welcome', action: 'recommender'
+	    	 redirect_to controller:'welcome', action: 'recommender'
 	    	 return
 	      end
 	    end
-		# redirect_to session.delete(:return_to)
-		
 		redirect_to root_url
 		return
 	end
