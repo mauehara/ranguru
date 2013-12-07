@@ -28,15 +28,26 @@ class UsersController < ApplicationController
 		@user = User.find(params[:user_id])
 	end
 
-	def add_friend
+	def add_friend	    
+		@session = session[:return_to]
 		user_id = params[:user_id]
 		add_remove_friend_session(user_id)
 		# redirect_to controler:'welcome', action: 'recommender'
 	end
 
 	def return_to_origin
+		@session = session[:return_to]
+		if session[:return_to] == "index"
+	    	redirect_to root_url
+	    else
+	      if session[:return_to] == "recommender"
+	    	 redirect_to controler:'welcome', action: 'recommender'
+	      end
+	    end
+		# redirect_to session.delete(:return_to)
+		
 		redirect_to root_url
-      	return
+		return
 	end
 
   private

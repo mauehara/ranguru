@@ -35,6 +35,7 @@ class WelcomeController < ApplicationController
   end
 
   def add_friends
+    session[:return_to] = params[:return_to]
     redirect_to users_url
     # user_id = params[:user_id]
     # add_friend_to_session(user_id)

@@ -6,6 +6,8 @@ Ranguru::Application.routes.draw do
   get 'restaurants/rated'
   get 'restaurants/rate'
   get 'users/modal'
+  get 'users/add_friend'
+  get 'users/return_to_origin'
 
   root 'welcome#index'
 
@@ -35,5 +37,7 @@ Ranguru::Application.routes.draw do
   match '/welcome/add_friends', to: 'welcome#add_friends', via: 'get'
   match '/welcome/reset', to: 'welcome#reset', via: 'get'
   match '/users/add_friend', to: 'users#add_friend', via: 'post'
+  match '/users/add_friend', to: 'users#add_friend', via: 'get'
+  match '/users/return_to_origin', to: 'users#return_to_origin', via: 'get'
 
 end

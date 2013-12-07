@@ -1,6 +1,6 @@
 <!-- <p>Recomendação (Mahout):  <%= @recommendations[@index_recommendation]%> / Índice: <%=@index_recommendation%></p> -->
 
-
+Sessão: <%=@session%>
 <h4 class="subheader" style="text-align:center">Recomendações do Guru para você!</h4>
 <div class="large-12 columns"> 
   <div class="large-10 large-centered columns">
@@ -9,11 +9,12 @@
         <ul id="featured1" data-orbit data-options="pause_on_hover:false; timer_speed:0;">
           <% @recommendations.each do |recommendation| 
           restaurant = Restaurant.find(recommendation[0])
+          rating = recommendation[1]
           %>
             <li>
               <img style="margin-left: 100px" src="<%= restaurant.image_url %>" />
               <div class="orbit-caption">
-                <%=restaurant.name%>
+                <%=restaurant.name%> - Nota do Guru: <%=rating.round(1)%>
               </div>
             
                           <!-- 
@@ -59,10 +60,10 @@
 </div>
  -->
 <div class="centered ">
-  <a class="round large button fi-plus" href="/welcome/add_friends"></a>
+  <a class="round large button fi-plus" href="/welcome/add_friends?return_to=recommender"></a>
 </div>
 <div class="centered " style="margin-top: -110px;margin-left: 60px;">
-  <a class="custom buttony round tiny button" href="/welcome/add_friends"><%=@number_friends%></a>
+  <a class="custom buttony round tiny button" href="/welcome/add_friends?return_to=recommender"><%=@number_friends%></a>
 </div>
 <div class="centered " style="margin-top: 60px;">
   <a class="round medium button" href="/welcome/reset">Começar do Zero</a>

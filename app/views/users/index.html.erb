@@ -2,15 +2,17 @@
   	<i class="fi-magnifying-glass"></i>
     <%= text_field_tag :search, params[:search], placeholder: "Buscar Usuários" %>
 <% end %>
-
+Sessão: <%=@session%>
 <ul id="user_list">
 <% for user in @users %>	
 	<% unless user == current_user %>
 		<li data-user-id="<%= user.id %>" class="item">
 			    <% if friend_is_in_session(user.id) %> 
-			    	<i class="fi-minus" style="float:left"></i>
+			    	<a class="fi-minus" style="float:left" href="/users/add_friend?user_id=<%=user.id%>"></a>
+<!-- 			    	<i class="fi-minus" style="float:left"></i>  -->
 			    <% else %>
-			    	<i class="fi-plus" style="float:left"></i>
+			    	<a class="fi-plus" style="float:left" href="/users/add_friend?user_id=<%=user.id%>"></a>
+<!-- 			    	<i class="fi-plus" style="float:left"></i> -->
 			    <% end %>
 				<div class="info">
 					<span class="user-name"><%= user.name %></span><br/>
