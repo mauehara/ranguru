@@ -60,11 +60,11 @@
 						  <p><img src="<%= @restaurant.image_url%>" style="display: block;text-align:center;"></p>
 						  <p>Para avaliar clique no número de estrelas desejadas abaixo (quanto mais para a direta, maior a nota):</p>
                             <div id="rating-restaurant-email" class="centered rating-div">
-                              <a class="1-star fi-star" href="/restaurants/rate?restaurant_id=<%=restaurant.id%>&restaurant_rating_value=1&recommendation=true"></a>
-                              <a class="2-star fi-star" href="/restaurants/rate?restaurant_id=<%=restaurant.id%>&restaurant_rating_value=2&recommendation=true"></a>
-                              <a class="3-star fi-star" href="/restaurants/rate?restaurant_id=<%=restaurant.id%>&restaurant_rating_value=3&recommendation=true"></a>
-                              <a class="4-star fi-star" href="/restaurants/rate?restaurant_id=<%=restaurant.id%>&restaurant_rating_value=4&recommendation=true"></a>
-                              <a class="5-star fi-star" href="/restaurants/rate?restaurant_id=<%=restaurant.id%>&restaurant_rating_value=5&recommendation=true"></a>
+                              <a class="1-star fi-star" href="/restaurants/rate?restaurant_id=<%=@restaurant.id%>&restaurant_rating_value=1&recommendation=true"></a>
+                              <a class="2-star fi-star" href="/restaurants/rate?restaurant_id=<%=@restaurant.id%>&restaurant_rating_value=2&recommendation=true"></a>
+                              <a class="3-star fi-star" href="/restaurants/rate?restaurant_id=<%=@restaurant.id%>&restaurant_rating_value=3&recommendation=true"></a>
+                              <a class="4-star fi-star" href="/restaurants/rate?restaurant_id=<%=@restaurant.id%>&restaurant_rating_value=4&recommendation=true"></a>
+                              <a class="5-star fi-star" href="/restaurants/rate?restaurant_id=<%=@restaurant.id%>&restaurant_rating_value=5&recommendation=true"></a>
                               <br/><br/>
                             </div>
 						  <p>Avaliando restaurantes você ajuda nosso Guru a prever recomendações cada vez melhores!</p>
