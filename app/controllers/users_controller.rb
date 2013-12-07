@@ -38,9 +38,11 @@ class UsersController < ApplicationController
 	def return_to_origin
 		if friends_return == "index"
 	    	redirect_to root_url
+	    	return
 	    else
 	      if friends_return == "recommender"
 	    	 redirect_to controler:'welcome', action: 'recommender'
+	    	 return
 	      end
 	    end
 		# redirect_to session.delete(:return_to)
