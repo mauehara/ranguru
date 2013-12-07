@@ -33,6 +33,7 @@ Ranguru::Application.routes.draw do
   match '/welcome/recommender', to: 'welcome#recommender', via: 'post'
   match '/welcome/recommender', to: 'welcome#recommender', via: 'get'
   match '/welcome/finalize', to: 'welcome#finalize', via: 'post'
+  match '/welcome/finalize', to: 'welcome#finalize', via: 'get'
   match '/welcome/add_friends', to: 'welcome#add_friends', via: 'post'
   match '/welcome/add_friends', to: 'welcome#add_friends', via: 'get'
   match '/welcome/reset', to: 'welcome#reset', via: 'get'

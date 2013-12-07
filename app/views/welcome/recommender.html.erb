@@ -16,7 +16,9 @@ Sessão: <%=@session%>
               <div class="orbit-caption">
                 <%=restaurant.name%> - Nota do Guru: <%=rating.round(1)%>
               </div>
-            
+              <div class="centered " style="margin-top: 20px;" >
+                <a class="round small button" href="/welcome/finalize?restaurant_id=<%=restaurant.id%>">Vou nesse!!</a>
+              </div>            
                           <!-- 
               <div id="mymodal" class="centered reveal-modal rating-modal"> -->
               <div id="rating-restaurant" class="centered rating-div">
@@ -65,9 +67,10 @@ Sessão: <%=@session%>
 <div class="centered " style="margin-top: -110px;margin-left: 60px;">
   <a class="custom buttony round tiny button" href="/welcome/add_friends?return_to=recommender"><%=@number_friends%></a>
 </div>
-<div class="centered " style="margin-top: 60px;">
-  <a class="round medium button" href="/welcome/reset">Começar do Zero</a>
+<div class="centered " style="margin-top: 80px;">
+  <a class="round small button" href="/welcome/reset">Começar do Zero</a>
 </div>
+
 
 
 <!-- <p><%=@recommendations%></p>

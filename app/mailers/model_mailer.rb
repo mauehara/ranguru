@@ -11,9 +11,9 @@ class ModelMailer < ActionMailer::Base
     @greeting = "Hi"
     @user = user
     @restaurant = restaurant
-    #@delivery_time = Time.now.rfc2822   # send now
+    @delivery_time = Time.now.rfc2822   # send now
     # @delivery_time = (Time.now + 10*60).rfc2822  # send in 10 minutes
-    @delivery_time = Time.now.end_of_day.rfc2822  # send in the end of day
+    # @delivery_time = Time.now.end_of_day.rfc2822  # send in the end of day
 
     headers['X-Mailgun-Deliver-By'] = @delivery_time
 

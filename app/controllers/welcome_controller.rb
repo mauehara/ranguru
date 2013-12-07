@@ -24,13 +24,13 @@ class WelcomeController < ApplicationController
   def finalize
     @recommendations = current_user_recommendations  
     @index_recommendation = index_recommendation
-    restaurant_id = (@recommendations[@index_recommendation])[0]
+    restaurant_id = params[:restaurant_id]
     reset_current_user_recommendations
     @restaurant = Restaurant.find(restaurant_id)
     @recommendation = Recommendation.create(user_id: current_user.id, restaurant_id: restaurant_id)
-
+    @user = current_user
     # Sending a e-mail requesting for feedback.
-    ModelMailer.request_feedback_notification(current_user, @restaurant).deliver
+    ModelMailer.request_feedback_notification(@user, @restaurant).deliver
 
   end
 
