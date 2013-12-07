@@ -60,7 +60,7 @@ module RestaurantsHelper
   private
 
   def get_recommendations(user_id = 1)
-    recommender = JrubyMahout::Recommender.new("EuclideanDistanceSimilarity", 4, "GenericUserBasedRecommender", false)
+    recommender = JrubyMahout::Recommender.new("EuclideanDistanceSimilarity", 20, "GenericUserBasedRecommender", false)
     #recommender.data_model = JrubyMahout::DataModel.new("mysql", { }).data_model
     recommender.data_model = JrubyMahout::DataModel.new("file", {:file_path => "_ratings.csv"}).data_model
     @evaluation = recommender.evaluate(0.7, 0.3)

@@ -1,4 +1,4 @@
-<p>Parabééns! Você escolheu o seguinte restaurante:</p>
+<h4 class="subheader" style="text-align:center">Parabééns! Você escolheu o seguinte restaurante:</h4>
 <div id="restaurant_details" class="panel" >
 		<img class="radius" src="<%= @restaurant.image_url %>">
 		<div class="info">
@@ -8,4 +8,6 @@
 		<div style="clear:both;"></div>
 </div>
 
-<%= button_to "Começar de novo", action: "index" %>
+<div class="centered " style="margin-top: 80px;">
+  <a class="round small button" href="/welcome/reset">Começar de novo</a>
+</div>

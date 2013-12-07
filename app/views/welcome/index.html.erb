@@ -1,4 +1,3 @@
-Sessão: <%=@session%>
 <section id="home">
 	<% if current_user_recommendations.length == 0 %>
 		<%= render 'shared/signup_steps' %>
@@ -9,11 +8,11 @@ Sessão: <%=@session%>
 	</ul> 
 
 	<div class="centered ">
-		<a class="round large button" style="font-size: 12px;" href="/welcome/add_friends?return_to=index">
+		<a class="round large button" style="font-size: 12px;" href="/welcome/add_friends?friends_return=index">
 			Adicione seus amigos
 		</a>
 	</div>
     <div class="centered " style="margin-top: -68px;margin-left: 170px;">
-		<a class="custom buttony round tiny button" href="/welcome/add_friends?return_to=index"><%=@number_friends%></a>
+		<a class="custom buttony round tiny button" href="/welcome/add_friends?friends_return=index"><%=@number_friends%></a>
 	</div>
 </section>
