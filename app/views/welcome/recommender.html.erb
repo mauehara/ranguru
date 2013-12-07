@@ -12,9 +12,7 @@
               <div class="orbit-caption">
                 <%=restaurant.name%> - Nota do Guru: <%=rating.round(1)%>
               </div>
-              <div class="centered " style="margin-top: 20px;" >
-                <a class="round small button" href="/welcome/finalize?restaurant_id=<%=restaurant.id%>">Vou nesse!!</a>
-              </div>            
+                <a id="btn-go" class="round small button" href="/welcome/finalize?restaurant_id=<%=restaurant.id%>">Vou nesse!!</a>
               <div id="rating-restaurant" class="centered rating-div">
                 <p style= "margin-bottom: -3px">Já conhece esse restaurante? Avalie!</p>
                 <a class="1-star fi-star" href="/restaurants/rate?restaurant_id=<%=restaurant.id%>&restaurant_rating_value=1&recommendation=true"></a>
