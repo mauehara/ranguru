@@ -34,10 +34,12 @@ class RestaurantsController < ApplicationController
     else
       if params[:recommendation] == "email"
         redirect_to root_path
+        return
       end
     end
     
     redirect_to root_path
+    return
   end 
 
 end
