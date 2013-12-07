@@ -38,5 +38,5 @@ Ranguru::Application.configure do
     :password => "6nspc5hd-366"
   }
 
-  config.asset_host = 'localhost:3000'
+  config.asset_host = '143.107.166.45:3000'
 end
