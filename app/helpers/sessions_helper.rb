@@ -53,6 +53,19 @@ module SessionsHelper
 		@friends || session[:friends]
 	end
 
+	def friends_return=(friends_return)
+		@friends_return = friends_return
+	end
+
+	def friends_return
+		@friends_return || session[:friends_return]
+	end	
+
+	def set_friends_return(friends_return)
+		session[:friends_return] = friends_return
+	end	
+
+
   def add_remove_friend_session(user_id)
     friend = User.find(user_id)
     if friend_is_in_session(user_id)
