@@ -1,13 +1,11 @@
 <section id="sidebar" role="complementary">
   <nav id="sideMenu" role="navigation">
     <ul id="sideMainNav" class="nav-bar">
-      <li><i class="fi-torso"></i><%= link_to current_user.name, current_user %></li>
+      <li><i class="fi-torso"></i><a href="#"><%= current_user.name %></a></li>
       <li class="divider"></li>
       <li><i class="fi-home"></i><a href=""><%= link_to "Início", :controller => "welcome", :action => "index" %></a></li>
       <li class="divider"></li>
       <li><i class="fi-star"></i><a href=""><%= link_to "Avaliar Restaurantes", :controller => "restaurants", :action => "index" %></a></li>
-      <li class="divider"></li>
-      <li><i class="fi-widget"></i><a href="">Configurações</a></li>
       <li class="divider"></li>
       <li><i class="fi-power"></i><%= link_to "Sair", signout_path, method: "delete" %></li>
     </ul>
