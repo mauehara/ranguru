@@ -1,5 +1,10 @@
-Parabéns! Você avaliou o seguinte restaurante:
-<%= @restaurant_id %>
-<%= @restaurant_rating_value %>
-
+<h4 class="subheader" style="text-align:center">Nosso Guru te agradece por avaliar o seguinte restaurante:</h4>
+<div id="restaurant_details" class="panel" >
+		<img class="radius" src="<%= @restaurant.image_url %>">
+		<div class="info">
+			<span class="restaurant-name"><%= @restaurant.name %></span><br/>
+			<span class="restaurant-address"><%= @restaurant.address %></span>
+		</div>
+		<div style="clear:both;"></div>
+</div>
 
