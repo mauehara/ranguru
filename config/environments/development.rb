@@ -37,4 +37,6 @@ Ranguru::Application.configure do
     :user_name => "postmaster@ranguru.mailgun.org",
     :password => "6nspc5hd-366"
   }
+
+  config.asset_host = 'localhost:3000'
 end
