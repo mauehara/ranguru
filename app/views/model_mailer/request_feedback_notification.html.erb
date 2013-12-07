@@ -27,8 +27,7 @@
                 <table width="100%" border="0" cellspacing="0" cellpadding="0" style="padding: 0 20px;">
                   <tr>
                     <td>
-                        <%= image_tag "ranguru-icon.jpg", :style=>"display: block; width:100%; height:10%;" %>
-
+                        <%= image_tag "http://143.107.166.45:3000/ranguru-icon.jpg", :style=>"display: block; width:""100%""; height:""10%;""" %>
                     </td>
                     <td align="right" style="color: #666; font-size: 14px;">
 
@@ -59,11 +58,11 @@
 						  <p><img src="<%= @restaurant.image_url%>" style="display: block;text-align:center;"></p>
 						  <p>Para avaliar clique no número de estrelas desejadas abaixo (quanto mais para a direta, maior a nota):</p>
                             <div id="rating-restaurant-email" class="centered rating-div">
-                              <p><a href="/restaurants/rate?restaurant_id=<%=@restaurant.id%>&restaurant_rating_value=1&recommendation=true"><%= image_tag "1-star.png"%></a></p>
-                              <p><a href="/restaurants/rate?restaurant_id=<%=@restaurant.id%>&restaurant_rating_value=2&recommendation=true"><%= image_tag "2-star.png"%></a></p>
-                              <p><a href="/restaurants/rate?restaurant_id=<%=@restaurant.id%>&restaurant_rating_value=3&recommendation=true"><%= image_tag "3-star.png"%></a></p>
-                              <p><a href="/restaurants/rate?restaurant_id=<%=@restaurant.id%>&restaurant_rating_value=4&recommendation=true"><%= image_tag "4-star.png"%></a></p>
-                              <p><a href="/restaurants/rate?restaurant_id=<%=@restaurant.id%>&restaurant_rating_value=5&recommendation=true"><%= image_tag "5-star.png"%></a></p>
+                              <p><a href="/restaurants/rate?restaurant_id=<%=@restaurant.id%>&restaurant_rating_value=1&recommendation=true"><%= image_tag "http://143.107.166.45:3000/1-star.png"%></a></p>
+                              <p><a href="/restaurants/rate?restaurant_id=<%=@restaurant.id%>&restaurant_rating_value=2&recommendation=true"><%= image_tag "http://143.107.166.45:3000/2-star.png"%></a></p>
+                              <p><a href="/restaurants/rate?restaurant_id=<%=@restaurant.id%>&restaurant_rating_value=3&recommendation=true"><%= image_tag "http://143.107.166.45:3000/3-star.png"%></a></p>
+                              <p><a href="/restaurants/rate?restaurant_id=<%=@restaurant.id%>&restaurant_rating_value=4&recommendation=true"><%= image_tag "http://143.107.166.45:3000/4-star.png"%></a></p>
+                              <p><a href="/restaurants/rate?restaurant_id=<%=@restaurant.id%>&restaurant_rating_value=5&recommendation=true"><%= image_tag "http://143.107.166.45:3000/5-star.png"%></a></p>
 
                               <br/><br/>
                             </div>
