@@ -16,5 +16,7 @@
 /log/*.log
 /tmp
 
+/_ratings.csv
+
 # Ignore local ruby-version setting
 /.ruby-version
