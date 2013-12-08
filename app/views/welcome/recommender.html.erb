@@ -14,9 +14,9 @@
                 <p style="font-size:12px;"><%=restaurant.address%></p>
               </div>
                 <a id="btn-go" class="round small button" href="/welcome/finalize?restaurant_id=<%=restaurant.id%>">Vou nesse!!</a>
-              <div id="rating-restaurant" class="rating-div">
+              <div id="rating-restaurant" class="rating-div" style= "padding-top: 30%">
                 <div class="centered">
-                <p style= "margin-bottom: 30%">Já conhece esse restaurante? Avalie!</p>
+                <p >Já conhece esse restaurante? Avalie!</p>
                 <a class="1-star fi-star" href="/restaurants/rate?restaurant_id=<%=restaurant.id%>&restaurant_rating_value=1&recommendation=true"></a>
                 <a class="2-star fi-star" href="/restaurants/rate?restaurant_id=<%=restaurant.id%>&restaurant_rating_value=2&recommendation=true"></a>
                 <a class="3-star fi-star" href="/restaurants/rate?restaurant_id=<%=restaurant.id%>&restaurant_rating_value=3&recommendation=true"></a>
