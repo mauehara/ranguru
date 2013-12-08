@@ -10,7 +10,8 @@
             <li>
               <img style="margin-left: 100px" src="<%= restaurant.image_url.nil? ? '/assets/default-restaurant-img.png' : restaurant.image_url %>" />
               <div class="orbit-caption">
-                <%=restaurant.name%> - Nota do Guru: <%=rating.round(1)%>
+                <p><%=restaurant.name%> - Nota do Guru: <%=rating.round(1)%></p>
+                <p><%=restaurant.address%></p>
               </div>
                 <a id="btn-go" class="round small button" href="/welcome/finalize?restaurant_id=<%=restaurant.id%>">Vou nesse!!</a>
               <div id="rating-restaurant" class="centered rating-div">
