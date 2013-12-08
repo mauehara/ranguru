@@ -17,6 +17,6 @@ class ModelMailer < ActionMailer::Base
 
     headers['X-Mailgun-Deliver-By'] = @delivery_time
 
-    mail to: @user.email
+    mail to: @user.email, subject: "Ranguru - Avalie o restaurante recomendado pelo Guru!"
   end
 end
