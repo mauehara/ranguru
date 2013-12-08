@@ -19,8 +19,10 @@ class RestaurantsController < ApplicationController
 
   def rate
   	@restaurant_id = params[:restaurant_id]
+    @restaurant = Restaurant.find(params[:restaurant_id])
   	@restaurant_rating_value = params[:restaurant_rating_value]
-  	@rating = Rating.find_or_initialize_by(user_id: current_user.id, restaurant_id: @restaurant_id)
+    user_id = params[:user_id] || current_user.id
+  	@rating = Rating.find_or_initialize_by(user_id: user_id, restaurant_id: @restaurant_id)
     @rating.rating = @restaurant_rating_value
 
     if @rating.save
@@ -30,9 +32,14 @@ class RestaurantsController < ApplicationController
     if params[:recommendation] == "true"
       redirect_to :back
       return
+    else
+      if params[:recommendation] == "email"
+        return
+      end
     end
     
     redirect_to root_path
+    return
   end 
 
 end
