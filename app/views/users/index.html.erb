@@ -2,7 +2,6 @@
   	<i class="fi-magnifying-glass"></i>
     <%= text_field_tag :search, params[:search], placeholder: "Buscar Usuários" %>
 <% end %>
-Sessão: <%=@session%>
 <ul id="user_list">
 <% for user in @users %>	
 	<% unless user == current_user %>
