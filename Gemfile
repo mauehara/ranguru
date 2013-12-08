@@ -16,7 +16,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'bcrypt-ruby', '~> 3.0.1'
-gem 'zurb-foundation'
+gem 'zurb-foundation', '4.0.9'
 gem 'will_paginate'
 
 group :doc do
