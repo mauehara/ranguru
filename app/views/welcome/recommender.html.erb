@@ -10,19 +10,19 @@
             <li>
               <img style="margin-left: 100px" src="<%= restaurant.image_url.nil? ? '/assets/default-restaurant-img.png' : restaurant.image_url %>" />
               <div class="orbit-caption">
-                <p><%=restaurant.name%> - Nota do Guru: <%=rating.round(1)%></p>
-                <p><%=restaurant.address%></p>
+                <p style="margin-bottom:0; font-weight:bold;"><%=restaurant.name%> - Nota do Guru: <%=rating.round(1)%></p>
+                <p style="margin-bottom:0; font-size:12px;"><%=restaurant.address%></p>
               </div>
                 <a id="btn-go" class="round small button" href="/welcome/finalize?restaurant_id=<%=restaurant.id%>">Vou nesse!!</a>
-              <div id="rating-restaurant" class="centered rating-div">
+              <div id="rating-restaurant" class="rating-div">
+                <div class="centered">
                 <p style= "margin-bottom: -3px">Já conhece esse restaurante? Avalie!</p>
                 <a class="1-star fi-star" href="/restaurants/rate?restaurant_id=<%=restaurant.id%>&restaurant_rating_value=1&recommendation=true"></a>
                 <a class="2-star fi-star" href="/restaurants/rate?restaurant_id=<%=restaurant.id%>&restaurant_rating_value=2&recommendation=true"></a>
                 <a class="3-star fi-star" href="/restaurants/rate?restaurant_id=<%=restaurant.id%>&restaurant_rating_value=3&recommendation=true"></a>
                 <a class="4-star fi-star" href="/restaurants/rate?restaurant_id=<%=restaurant.id%>&restaurant_rating_value=4&recommendation=true"></a>
                 <a class="5-star fi-star" href="/restaurants/rate?restaurant_id=<%=restaurant.id%>&restaurant_rating_value=5&recommendation=true"></a>
-                <br/><br/>
-                <p id="rating-help-recommendation"></p>
+                </div>
               </div>
             </li>
           <% end %>
