@@ -1,3 +1,5 @@
+require 'fastimage'
+
 class WelcomeController < ApplicationController
   before_action :signed_in_user
   before_action :has_enough_recommendations
@@ -18,7 +20,7 @@ class WelcomeController < ApplicationController
     @index_recommendation = index_recommendation
   	restaurant_id = (@recommendations[@index_recommendation])[0]
   	@restaurant = Restaurant.find(restaurant_id)
-    @friends = session[:friends]
+    @friends = session[:friends]    
   end 
 
   def finalize
