@@ -30,7 +30,7 @@ class RestaurantsController < ApplicationController
     end
 
     if params[:recommendation] == "true"
-      redirect_to :back
+      redirect_to controller:'welcome', action: 'recommender'
       return
     else
       if params[:recommendation] == "email"
