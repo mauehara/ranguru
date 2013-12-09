@@ -8,8 +8,8 @@
           rating = recommendation[1]
           %>
             <li>
-              <% height = FastImage.size(restaurant.image_url)[1] %>
-              <% width = FastImage.size(restaurant.image_url)[0] %>
+              <% height = restaurant.image_url != nil FastImage.size(restaurant.image_url)[1] : 1%>
+              <% width = restaurant.image_url != nil FastImage.size(restaurant.image_url)[0] : 1 %>
               height: <%= height%>
               width: <%= width%>
               <img style="margin-left: 100px" src="<%= restaurant.image_url.nil? ? '/assets/default-restaurant-img.png' : restaurant.image_url %>" />
@@ -18,7 +18,7 @@
                 <p style="font-size:12px;"><%=restaurant.address%></p>
               </div>
                 <a id="btn-go" class="round small button" href="/welcome/finalize?restaurant_id=<%=restaurant.id%>">Vou nesse!!</a>
-              <div id="rating-restaurant" class="rating-div" style= "margin-top: <%= width/height * 200%>px">
+              <div id="rating-restaurant" class="rating-div" style= "margin-top: <%= width/height * 300%>px">
                 <div class="centered">
                 <p >Já conhece esse restaurante? Avalie!</p>
                 <a class="1-star fi-star" href="/restaurants/rate?restaurant_id=<%=restaurant.id%>&restaurant_rating_value=1&recommendation=true"></a>
