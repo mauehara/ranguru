@@ -18,7 +18,7 @@
                 <p style="font-size:12px;"><%=restaurant.address%></p>
               </div>
                 <a id="btn-go" class="round small button" href="/welcome/finalize?restaurant_id=<%=restaurant.id%>">Vou nesse!!</a>
-              <div id="rating-restaurant" class="rating-div" style= "margin-top: <%= (width.to_f/height * 175) > 350 ? 350: (width.to_f/height * 175) %>px">
+              <div id="rating-restaurant" class="rating-div" style= "margin-top: <%= (width.to_f/height * 175) > 350 ? 350: ( width.to_f/height < 1 ? 100 : (width.to_f/height * 175)) %>px">
                 <div class="centered">
                 <p >Já conhece esse restaurante? Avalie!</p>
                 <a class="1-star fi-star" href="/restaurants/rate?restaurant_id=<%=restaurant.id%>&restaurant_rating_value=1&recommendation=true"></a>
