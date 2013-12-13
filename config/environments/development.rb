@@ -29,7 +29,7 @@ Ranguru::Application.configure do
 
   # Sending e-mails using Mailgun service.s
   config.action_mailer.asset_host = "http://143.107.166.45:3000"
-  config.action_controller.asset_host = "http://143.107.166.45:3000"
+  # config.action_controller.asset_host = "http://143.107.166.45:3000"
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     :authentication => :plain,
